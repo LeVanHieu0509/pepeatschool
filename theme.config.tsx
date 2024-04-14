@@ -858,10 +858,11 @@ const config: DocsThemeConfig = {
     const { frontMatter } = useConfig();
 
     const ogConfig = {
-      title: "Million.js",
-      description: "The Virtual DOM Replacement for React",
+      title: "Hello from PEPE AT SCHOOL | PEPE AT SCHOOL",
+      description:
+        "Kênh thông tin về Tài Sản Số Siêu Dễ Hiểu đến nỗi người yêu của bạn cũng hiểu được.",
       author: {
-        twitter: "aidenybai",
+        twitter: "Nguyen Tan Hiep",
       },
       favicon: "/favicon.svg",
     };
