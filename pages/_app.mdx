@@ -9,7 +9,6 @@ import { LightTheme } from "../styles/theme.tsx";
 export default function App({ Component, pageProps }) {
   return (
     <main>
-  
        <ThemeProviderStyled theme={LightTheme}>
         <ThemeProvider forcedTheme={Component.theme || null}>
           <GlobalStyle />
