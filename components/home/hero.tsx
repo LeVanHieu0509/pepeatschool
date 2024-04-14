@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import TextsLogo from "../../public/texts.webp";
 import HackClubLogo from "../../public/hackclub.svg";
 import OpenSaucedLogo from "../../public/opensauced.svg";
@@ -11,6 +11,7 @@ import { useTranslations } from "../../hooks/use-translations";
 import { Container } from "./container";
 import { ShimmerButton } from "./shimmer-button";
 import { track } from "@vercel/analytics";
+import AppContext from "src/contexts/app";
 
 const CountUp = dynamic(() => import("react-countup"), {
   loading: () => <span>70</span>,
@@ -18,6 +19,19 @@ const CountUp = dynamic(() => import("react-countup"), {
 });
 
 export function Hero() {
+  const {
+    account,
+    ether,
+    networkConnect,
+    tokenData,
+    connectWallet,
+    setReloading,
+    loading,
+    reLoading,
+    setAccount,
+    setNetworkConnect,
+  } = useContext(AppContext);
+
   const { hero } = useTranslations();
   const [submitted, setSubmitted] = useState<boolean>(false);
 
@@ -30,6 +44,19 @@ export function Hero() {
       setSubmitted(false);
     }, 1000);
   };
+
+  useEffect(() => {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setAccount(accounts[0]);
+        } else {
+          setAccount(null);
+          setNetworkConnect(null);
+        }
+      });
+    }
+  }, [account]);
 
   return (
     <div className="relative pb-10 border-b border-b-[#ffffff1a]">
@@ -58,30 +85,32 @@ export function Hero() {
               !
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-y-4 gap-x-6">
-              <Link href="/docs/introduction" className="w-full sm:w-max">
-                <ShimmerButton
-                  className="relative w-full sm:w-max flex items-center justify-center transition-all hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
-                  background="radial-gradient(ellipse 80% 70% at 50% 120%, #b28ce2, #892fda)">
-                  <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10">
-                    {hero.getStarted}
-                  </span>
-                </ShimmerButton>
-              </Link>
-              {/* <Link
-                href="/blog/virtual-dom"
-                className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-purple-600/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-zinc-700 dark:before:bg-zinc-800 sm:w-max"
-              >
-                <span className="relative text-base font-semibold text-purple-600 dark:text-white">
-                  {hero.how}
-                </span>
-              </Link> */}
+              <div className="w-full sm:w-max">
+                {account ? (
+                  <Link href={"/docs/road-map-cho-nguoi-moi"}>
+                    <ShimmerButton
+                      className="relative w-full sm:w-max flex items-center justify-center transition-all hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                      background="radial-gradient(ellipse 80% 70% at 50% 120%, #166815, #4c9540)">
+                      <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10">
+                        {hero.getStarted}
+                      </span>
+                    </ShimmerButton>
+                  </Link>
+                ) : (
+                  <ShimmerButton
+                    onClick={() => connectWallet()}
+                    className="relative w-full sm:w-max flex items-center justify-center transition-all hover:shadow-[0_0_0_3px_rgba(255,255,255,0.3)_inset]"
+                    background="radial-gradient(ellipse 80% 70% at 50% 120%, #166815, #4c9540)">
+                    <span className="relative whitespace-pre text-center text-base font-semibold leading-none tracking-tight text-white z-10">
+                      {hero.connectWallet}
+                    </span>
+                  </ShimmerButton>
+                )}
+              </div>
             </div>
             <button
               className="mt-6 flex flex-row items-center gap-2 mx-auto rounded-lg group"
               onClick={handleClickWizard}>
-              <p className="text-sm text-zinc-100 dark:text-zinc-400 font-mono">
-                ~ npx million@latest
-              </p>
               <div className="opacity-0 group-hover:opacity-100 text-xs text-zinc-600 dark:text-zinc-300 transition-opacity">
                 {submitted ? (
                   <svg

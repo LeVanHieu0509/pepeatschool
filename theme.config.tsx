@@ -1,11 +1,8 @@
-import React from "react";
 import { useRouter } from "next/router";
-import { type DocsThemeConfig, useConfig } from "nextra-theme-docs";
-import { GitHubIcon } from "@components/icons/github-icon";
-import { DiscordIcon } from "@components/icons/discord-icon";
-import { TwitterXIcon } from "@components/icons/twitter-x-icon";
-import packageJson from "./package.json" assert { type: "json" };
+import { useConfig, type DocsThemeConfig } from "nextra-theme-docs";
 import { ExtraContent } from "./components/extra-content";
+import Profile from "@components/profile";
+import Avatar from "@components/avatar";
 
 const config: DocsThemeConfig = {
   logo: () => {
@@ -766,15 +763,15 @@ const config: DocsThemeConfig = {
       </span>
     );
   },
-  project: {
-    link: "https://github.com/aidenybai/million",
-    icon: <GitHubIcon />,
-  },
-  chat: {
-    link: "https://million.dev/chat",
-    icon: <DiscordIcon />,
-  },
-  docsRepositoryBase: "https://github.com/aidenybai/million/tree/main/website/",
+  // project: {
+  //   link: "https://github.com/aidenybai/million",
+  //   icon: <GitHubIcon />,
+  // },
+  // chat: {
+  //   link: "https://million.dev/chat",
+  //   icon: <DiscordIcon />,
+  // },
+  // docsRepositoryBase: "",
   footer: {
     text: (
       <div className="flex flex-col items-start gap-6 xl:flex-row   w-full justify-between">
@@ -846,7 +843,13 @@ const config: DocsThemeConfig = {
     ),
   },
   navbar: {
-    extraContent: <TwitterXIcon />,
+    extraContent: (
+      <div className="relative">
+        <Avatar />
+
+        <Profile />
+      </div>
+    ),
   },
   head: () => {
     const { asPath, pathname, query } = useRouter();
@@ -922,15 +925,15 @@ const config: DocsThemeConfig = {
   search: {
     placeholder: "Tìm kiếm...",
   },
-  banner: {
-    dismissible: true,
-    key: `version-${packageJson.version}`,
-    text: (
-      <a href="https://million.dev/blog/lint" target="_blank">
-        Million Lint is in public beta →
-      </a>
-    ),
-  },
+  // banner: {
+  //   dismissible: true,
+  //   key: `version-${packageJson.version}`,
+  //   text: (
+  //     <a href="https://million.dev/blog/lint" target="_blank">
+  //       Million Lint is in public beta →
+  //     </a>
+  //   ),
+  // },
   toc: {
     float: true,
     backToTop: true,
@@ -963,16 +966,10 @@ const config: DocsThemeConfig = {
     const { asPath, pathname, query } = useRouter();
 
     if (["/", "/docs"].includes(asPath)) {
-      return { titleTemplate: "Million.js" };
+      return { titleTemplate: "Hello from PEPE AT SCHOOL | PEPE AT SCHOOL" };
     }
 
-    if (pathname.startsWith("/wrapped/")) {
-      return {
-        title: (query?.name ?? "My React app") + " Wrapped | Million.js",
-      };
-    }
-
-    return { titleTemplate: `%s | Million.js` };
+    return { titleTemplate: `%s | Hello from PEPE AT SCHOOL | PEPE AT SCHOOL` };
   },
 };
 

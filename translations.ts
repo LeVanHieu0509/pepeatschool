@@ -8,7 +8,8 @@ export const translations = {
       forReact:
         "về Tài Sản Số Siêu Dễ Hiểu đến nỗi người yêu của bạn cũng hiểu được.",
       now: "",
-      getStarted: "Connect Wallet →",
+      getStarted: "Get Start →",
+      connectWallet: "Connect Wallet →",
       how: "How?",
       trustedBy: "Trusted by companies who ship to",
       users: "users",

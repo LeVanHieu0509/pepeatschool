@@ -59,12 +59,12 @@ const style = css`
   }
 
   .gradient-bg {
-    background: linear-gradient(#a788ec, #8066b7);
+    background: linear-gradient(#33925d, #33925d);
   }
 
   .gradient-text {
     --bg-size: 400%;
-    background: linear-gradient(90deg, #efa0a5, #a788ec, #efa0a5) 0 0 /
+    background: linear-gradient(90deg, #166815, #33925d, #166815) 0 0 /
       var(--bg-size) 100%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -715,6 +715,30 @@ const style = css`
     top: 0;
     left: 0;
   }
+
+  .circle {
+    line-height: 0; /* remove line-height */
+    display: inline-block; /* circle wraps image */
+    margin: 5px;
+    border: 4px solid rgba(200, 200, 200, 0.4);
+    border-radius: 50%; /* relative value */
+    /*box-shadow: 0px 0px 5px rgba(0,0,0,0.4);*/
+    transition: linear 0.25s;
+    height: 40px;
+    width: 40px;
+  }
+  .circle img {
+    border-radius: 50%; /* relative value for
+				   adjustable image size */
+  }
+  .circle:hover {
+    transition: ease-out 0.2s;
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    -webkit-transition: ease-out 0.2s;
+  }
+  a.circle {
+    color: transparent;
+  } /* IE fix: removes blue border */
 `;
 
 export const GlobalStyle = createGlobalStyle`

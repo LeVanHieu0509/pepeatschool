@@ -5,16 +5,19 @@ import { ThemeProvider } from 'next-themes'
 import { ThemeProvider as ThemeProviderStyled } from "styled-components";
 import { GlobalStyle } from "../styles/globals.tsx";
 import { LightTheme } from "../styles/theme.tsx";
+import {AppProvider} from '../src/contexts/app/index.tsx'
 
 export default function App({ Component, pageProps }) {
   return (
     <main>
        <ThemeProviderStyled theme={LightTheme}>
         <ThemeProvider forcedTheme={Component.theme || null}>
-          <GlobalStyle />
-          <Component {...pageProps} />
-          <Analytics />
-          <SpeedInsights />
+          <AppProvider> 
+              <GlobalStyle />
+              <Component {...pageProps} />
+              <Analytics />
+              <SpeedInsights />
+          </AppProvider>
         </ThemeProvider>
       </ThemeProviderStyled>
     </main>
