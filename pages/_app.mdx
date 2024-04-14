@@ -1,0 +1,24 @@
+import "../styles/global.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from 'next-themes'
+import { ThemeProvider as ThemeProviderStyled } from "styled-components";
+import { GlobalStyle } from "../styles/globals.tsx";
+import { LightTheme } from "../styles/theme.tsx";
+
+export default function App({ Component, pageProps }) {
+  return (
+    <main>
+  
+       <ThemeProviderStyled theme={LightTheme}>
+        <ThemeProvider forcedTheme={Component.theme || null}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
+      </ThemeProviderStyled>
+    </main>
+
+);
+}
