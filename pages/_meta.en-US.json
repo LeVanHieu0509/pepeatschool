@@ -18,11 +18,11 @@
   },
   "docs": {
     "type": "page",
-    "title": "Docs"
+    "title": "Chuyên gia"
   },
   "blog": {
     "type": "page",
-    "title": "Blog",
+    "title": "Cộng đồng",
     "theme": {
       "typesetting": "article",
       "sidebar": true,

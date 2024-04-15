@@ -855,12 +855,12 @@ const config: DocsThemeConfig = {
     const { frontMatter } = useConfig();
 
     const ogConfig = {
-      title: "Million.js",
+      title: "Pepe at school",
       description: "The Virtual DOM Replacement for React",
       author: {
         twitter: "aidenybai",
       },
-      favicon: "/favicon.svg",
+      favicon: "/Pepe-at-school-logo.png",
     };
     const favicon = String(ogConfig.favicon);
     let title = String(frontMatter.title || ogConfig.title);
@@ -885,7 +885,7 @@ const config: DocsThemeConfig = {
       ogUrl = `https://telemetry.million.dev/api/v1/og/wrapped/${id}.mp4?name=${encodeURIComponent(
         name as any
       )}`;
-      title = name + " Wrapped | Million.js";
+      title = name + " Wrapped | Pepe At school";
     }
 
     return (
@@ -963,16 +963,16 @@ const config: DocsThemeConfig = {
     const { asPath, pathname, query } = useRouter();
 
     if (["/", "/docs"].includes(asPath)) {
-      return { titleTemplate: "Million.js" };
+      return { titleTemplate: "Pepe at School" };
     }
 
     if (pathname.startsWith("/wrapped/")) {
       return {
-        title: (query?.name ?? "My React app") + " Wrapped | Million.js",
+        title: (query?.name ?? "My React app") + " Wrapped | Pepe at school",
       };
     }
 
-    return { titleTemplate: `%s | Million.js` };
+    return { titleTemplate: ` Pepe at school` };
   },
 };
 
