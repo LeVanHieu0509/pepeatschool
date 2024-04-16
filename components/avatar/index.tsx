@@ -27,7 +27,7 @@ const Avatar = ({}: AvatarProps) => {
           <img
             height="40"
             width="40"
-            src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128"
+            src="https://tse1.mm.bing.net/th?id=OIP.712SH6ln__0ko2AT13KxrwAAAA&pid=Api&P=0&h=180"
             alt="Cloud Chen"
           />
         </div>

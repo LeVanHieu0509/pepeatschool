@@ -871,7 +871,7 @@ const config: DocsThemeConfig = {
     const description = String(frontMatter.description || ogConfig.description);
     const note =
       (frontMatter.date as string | undefined) ?? pathname === "/"
-        ? "million.dev"
+        ? "Pepe at school"
         : pathname;
     const canonical = new URL(asPath, "https://million.dev").toString();
 

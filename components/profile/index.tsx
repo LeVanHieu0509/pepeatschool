@@ -43,16 +43,16 @@ const Profile = ({}: ProfileProps) => {
           <div className="border-b px-4 pb-6">
             <div className="text-center my-4">
               <img
-                className="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
-                src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128"
+                className="h-32 w-32 rounded-full border-4 border-gray dark:border-gray-800 mx-auto my-4"
+                src="https://tse1.mm.bing.net/th?id=OIP.712SH6ln__0ko2AT13KxrwAAAA&pid=Api&P=0&h=180"
                 alt=""
               />
               <div className="py-2">
                 <h3 className="font-bold text-2xl text-gray-800 dark:text-white mb-1">
-                  No name
+                  Pepe student
                 </h3>
-                <p className=" text-gray-700 dark:text-gray-300 text-sm">
-                  Address: {account?.slice(0, 10)}...
+                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                   {account?.slice(0, 10)}...
                   {account?.slice(36, account.length)}
                 </p>
               </div>

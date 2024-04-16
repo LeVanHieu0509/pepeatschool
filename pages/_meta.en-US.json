@@ -1,7 +1,7 @@
 {
   "index": {
     "type": "page",
-    "title": "Million.js",
+    "title": "Pepe at school",
     "display": "hidden",
     "theme": {
       "layout": "raw"
@@ -18,11 +18,11 @@
   },
   "docs": {
     "type": "page",
-    "title": "Chuyên gia"
+    "title": "Kinh Nghiệm"
   },
   "blog": {
     "type": "page",
-    "title": "Cộng đồng",
+    "title": "Cộng Đồng",
     "theme": {
       "typesetting": "article",
       "sidebar": true,
