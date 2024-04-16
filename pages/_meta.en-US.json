@@ -1,19 +1,10 @@
 {
   "index": {
     "type": "page",
-    "title": "Million.js",
+    "title": "PEPE AT SCHOOL",
     "display": "hidden",
     "theme": {
       "layout": "raw"
-    }
-  },
-  "wrapped": {
-    "type": "page",
-    "theme": {
-      "layout": "full",
-      "sidebar": false,
-      "toc": false,
-      "pagination": false
     }
   },
   "docs": {

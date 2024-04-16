@@ -30,9 +30,7 @@ export function About() {
               description={
                 <>
                   {about.millionIntroduces}{" "}
-                  <Link
-                    href="/blog/virtual-dom"
-                    className="underline nx-text-primary-600">
+                  <Link href="/" className="underline nx-text-primary-600">
                     {about.blockVirtualDomQuote}
                   </Link>{" "}
                   {about.blockVirtualDomDescription}
@@ -45,9 +43,7 @@ export function About() {
               description={
                 <>
                   {about.millionUses}{" "}
-                  <Link
-                    href="/blog/behind-the-block"
-                    className="underline nx-text-primary-600">
+                  <Link href="" className="underline nx-text-primary-600">
                     {about.customCompiler}
                   </Link>{" "}
                   {about.automaticallyOptimizes}
