@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Slideshow, motionAnimationProps } from './slideshow';
+import { motion } from "framer-motion";
+import { Slideshow, motionAnimationProps } from "./slideshow";
 
 export const frames = [
   <motion.svg
@@ -9,8 +9,7 @@ export const frames = [
     height="302"
     viewBox="0 0 626 302"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <motion.rect
       {...motionAnimationProps}
       width="626"
@@ -110,8 +109,7 @@ export const frames = [
     height="302"
     viewBox="0 0 626 302"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <motion.rect
       {...motionAnimationProps}
       width="626"
@@ -214,8 +212,7 @@ export const frames = [
     height="302"
     viewBox="0 0 626 302"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <motion.rect
       {...motionAnimationProps}
       width="626"
@@ -318,8 +315,7 @@ export const frames = [
     height="302"
     viewBox="0 0 626 302"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <motion.rect
       {...motionAnimationProps}
       width="626"
@@ -463,8 +459,7 @@ export const frames = [
         y1="132.405"
         x2="296.293"
         y2="126.63"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopColor="#10D310" />
         <stop offset="1" stopColor="white" />
       </linearGradient>
@@ -478,8 +473,7 @@ export const frames = [
     height="302"
     viewBox="0 0 626 302"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <motion.path
       {...motionAnimationProps}
       d="M0 19C0 8.50659 8.50659 0 19 0H607C617.493 0 626 8.50659 626 19V283C626 293.493 617.493 302 607 302H19C8.5066 302 0 293.493 0 283V19Z"
@@ -648,8 +642,7 @@ export const frames = [
         y1="149.289"
         x2="326.451"
         y2="145.932"
-        gradientUnits="userSpaceOnUse"
-      >
+        gradientUnits="userSpaceOnUse">
         <stop stopColor="#10D310" />
         <stop offset="1" stopColor="white" />
       </linearGradient>
@@ -663,8 +656,7 @@ export const frames = [
     height="302"
     viewBox="0 0 626 302"
     fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+    xmlns="http://www.w3.org/2000/svg">
     <motion.path
       {...motionAnimationProps}
       d="M0 19C0 8.50659 8.50659 0 19 0H607C617.493 0 626 8.50659 626 19V283C626 293.493 617.493 302 607 302H19C8.5066 302 0 293.493 0 283V19Z"
@@ -843,11 +835,11 @@ export const frames = [
 
 export const descriptions = [
   'Instead of rendering the JSX with React, we render it using Million.js, which passes "holes" (represented with "?") to the virtual DOM. These holes will act as placeholders for dynamic content and are used during static analysis.',
-  'We now begin static analysis. We check the first node for a placeholder and find none. We go next.',
-  'We check the second node for a placeholder and find none. We go next.',
+  "We now begin static analysis. We check the first node for a placeholder and find none. We go next.",
+  "We check the second node for a placeholder and find none. We go next.",
   'We check the third node for a placeholder and find a "?". We push the placeholder to the "Edit Mapping," which associates `prop1` to the placeholder node. We then remove the placeholder from the block.',
   'We check the fourth node for a placeholder and find a "?". We push the placeholder to the "Edit Mapping," which associates `prop2` to the placeholder node. We then remove the placeholder from the block.',
-  'We check the fifth node for a placeholder and find none. We now finish.',
+  "We check the fifth node for a placeholder and find none. We now finish.",
 ];
 
 export const StaticAnalysisExample = () => {
