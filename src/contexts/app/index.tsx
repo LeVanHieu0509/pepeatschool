@@ -113,8 +113,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     fetchingData();
-    // singleSwapToken();
-  }, [connectWallet]);
+  }, []);
 
   return (
     <AppContext.Provider

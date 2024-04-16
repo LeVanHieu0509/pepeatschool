@@ -6,20 +6,26 @@ import { ThemeProvider as ThemeProviderStyled } from "styled-components";
 import { GlobalStyle } from "../styles/globals.tsx";
 import { LightTheme } from "../styles/theme.tsx";
 import {AppProvider} from '../src/contexts/app/index.tsx'
+import { ThemeProvider as ThemeMaterialTailwind } from "@material-tailwind/react";
+import ThemeWrapper from "../src/containers/theme-wrapper";
 
 export default function App({ Component, pageProps }) {
   return (
     <main>
+    <ThemeMaterialTailwind>
        <ThemeProviderStyled theme={LightTheme}>
         <ThemeProvider forcedTheme={Component.theme || null}>
           <AppProvider> 
+              <ThemeWrapper component={<Component {...pageProps} />}>
               <GlobalStyle />
-              <Component {...pageProps} />
+            
               <Analytics />
               <SpeedInsights />
+                     </ThemeWrapper>
           </AppProvider>
         </ThemeProvider>
       </ThemeProviderStyled>
+      </ThemeMaterialTailwind>
     </main>
 
 );
