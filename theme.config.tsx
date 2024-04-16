@@ -775,21 +775,21 @@ const config: DocsThemeConfig = {
   footer: {
     text: (
       <div className="flex flex-col items-start gap-6 xl:flex-row   w-full justify-between">
-        <div>© 2021-{new Date().getFullYear()} Million Software, Inc.</div>
+        <div>© {new Date().getFullYear()} PEPEATSCHOOL Software, Inc.</div>
 
         <div>
-          <p className="text-base pb-2 text-white font-bold">Resources</p>
+          <p className="text-base pb-2 text-black font-bold">Tài nguyên</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <a href="/docs/introduction" className="text-sm">
-                Documentation
+              <a href="/docs/road-map-cho-nguoi-moi" className="text-sm">
+                Tài liệu
               </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <p className="text-base pb-2 text-white font-bold">Ecosystem</p>
+          <p className="text-base pb-2 text-black font-bold">Hệ thống</p>
           <ul className="flex flex-col gap-2">
             <li>
               <a href="/showcase" className="text-sm">
@@ -812,11 +812,11 @@ const config: DocsThemeConfig = {
         </div>
 
         <div>
-          <p className="text-base pb-2 text-white font-bold">About</p>
+          <p className="text-base pb-2 text-black font-bold">Chúng tôi</p>
           <ul className="flex flex-col gap-2">
             <li>
               <a href="/foundation" className="text-sm">
-                Million Foundation
+                PEPEATSCHOOL Foundation
               </a>
             </li>
           </ul>

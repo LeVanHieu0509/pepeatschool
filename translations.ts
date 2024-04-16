@@ -23,22 +23,21 @@ export const translations = {
     about: {
       whatsInMillionJS: "What's in PEPE AT SCHOOL?",
       toolsToMakeReactFaster: "The tools to make React faster, automatically.",
-      blockVirtualDom: "Block Virtual DOM",
-      blockVirtualDomQuote: `"block" virtual DOM.`,
-      millionIntroduces: "Million.js introduces a novel",
+      blockVirtualDom: "Đội ngũ",
+      blockVirtualDomQuote: `Pepe at school`,
+      millionIntroduces: "",
       blockVirtualDomDescription:
-        "It's significantly faster than React's virtual DOM, as it diffs data instead of the DOM.",
-      superchargedCompiler: "Supercharged Compiler",
-      millionUses: "Million.js uses a",
-      customCompiler: "custom compiler",
+        "được thành lập từ những thành viên đã bỏ lỡ cơ hội trở nên giàu có bởi con Pepe lớn, trải qua cú sốc thị trường crypto năm 2020 đến nay và cũng từng nhận nhiều bài học cay đắng nhất từ thị trường.",
+      superchargedCompiler: "Giải pháp",
+      millionUses: "",
+      customCompiler: "Pepe at school",
       automaticallyOptimizes:
-        "that automatically optimizes your React components on the server.",
-      automaticMode: "Automatic Mode",
+        " là một bộ cẩm nang toàn tập các kinh nghiệm đầu tư tài sản số thực chiến từ các chuyên gia hàng đầu, và được đội ngũ lựa chọn và đơn giản hóa sao cho dễ hiểu nhất và dễ áp dụng nhất dành cho các nhà đầu tư.",
+      automaticMode: "Mục tiêu",
       tiredOf:
-        "Tired of learning new frameworks and big migrations? Million.js ships",
-      dropIn: "a drop-in automatic mode",
-      makeReactFaster:
-        "to make your React apps faster, without any code changes.",
+        "mong muốn giúp các nhà đầu tư mới được trang bị đầy đủ kiến thức và công cụ crypto, để có thể lựa chọn định hướng đầu tư phù hợp nhất trong siêu chu kỳ sắp tới.",
+      dropIn: "Pepe at school",
+      makeReactFaster: "",
       rawJs: "React at the speed of raw JS",
       rawJsDescription:
         "Million.js optimizes React, improving its performance. It stands out as one of the top performers in the",

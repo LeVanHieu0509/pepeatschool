@@ -59,13 +59,10 @@ export function About() {
               icon={<ThumbsUpIcon />}
               description={
                 <>
-                  {about.tiredOf}{" "}
-                  <Link
-                    href="/docs/automatic"
-                    className="underline nx-text-primary-600">
+                  <Link href="/" className="underline nx-text-primary-600">
                     {about.dropIn}
                   </Link>{" "}
-                  {about.makeReactFaster}
+                  {about.tiredOf} {about.makeReactFaster}
                 </>
               }
             />
@@ -152,7 +149,7 @@ rounded-lg text-center bg-gradient-to-b from-zinc-200 to-white dark:from-zinc-70
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 animate-ping text-purple-500">
+            className="w-6 h-6 animate-ping text-green-500">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -196,7 +193,7 @@ function ThumbsUpIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 text-purple-500 hover:animate-spin">
+      className="w-6 h-6 text-green-500 hover:animate-spin">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -214,7 +211,7 @@ function LightBulbIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 text-purple-400 hover:animate-spin">
+      className="w-6 h-6 text-green-400 hover:animate-spin">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -232,7 +229,7 @@ function BoxIcon() {
       viewBox="0 0 24 24"
       strokeWidth="1.5"
       stroke="currentColor"
-      className="w-6 h-6 text-purple-400 hover:animate-spin">
+      className="w-6 h-6 text-green-400 hover:animate-spin">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -250,7 +247,7 @@ function LightningIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 text-purple-400 m-auto hover:animate-spin">
+      className="w-6 h-6 text-green-400 m-auto hover:animate-spin">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -268,7 +265,7 @@ function ClockIcon() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6 m-auto text-purple-600 dark:text-purple-400 hover:animate-spin">
+      className="w-6 h-6 m-auto text-green-600 dark:text-green-400 hover:animate-spin">
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
