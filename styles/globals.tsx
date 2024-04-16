@@ -59,7 +59,7 @@ const style = css`
   }
 
   .gradient-bg {
-    background: linear-gradient(#33925d, #33925d);
+    background: linear-gradient(#39e667, #026c0d);
   }
 
   .gradient-text {

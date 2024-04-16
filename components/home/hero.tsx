@@ -231,7 +231,7 @@ export function Companies() {
     <div className="mt-36 text-center lg:mt-32">
       <div className="uppercase text-sm font-semibold tracking-wider text-zinc-600 dark:text-zinc-400">
         {hero.trustedBy}{" "}
-        <span className="dark:text-white text-black semibold">3M+</span>{" "}
+        <span className="dark:text-white text-black semibold"></span>{" "}
         {hero.users}
       </div>
       <div className="slider">

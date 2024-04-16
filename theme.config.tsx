@@ -864,7 +864,7 @@ const config: DocsThemeConfig = {
       author: {
         twitter: "Nguyen Tan Hiep",
       },
-      favicon: "/favicon.svg",
+      favicon: "/Pepe-at-school-logo.png",
     };
     const favicon = String(ogConfig.favicon);
     let title = String(frontMatter.title || ogConfig.title);
@@ -889,7 +889,7 @@ const config: DocsThemeConfig = {
       ogUrl = `https://telemetry.million.dev/api/v1/og/wrapped/${id}.mp4?name=${encodeURIComponent(
         name as any
       )}`;
-      title = name + " Wrapped | Million.js";
+      title = name + " Wrapped | Pepe At school";
     }
 
     return (

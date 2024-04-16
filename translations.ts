@@ -11,8 +11,8 @@ export const translations = {
       getStarted: "Get Start →",
       connectWallet: "Connect Wallet →",
       how: "How?",
-      trustedBy: "Trusted by companies who ship to",
-      users: "users",
+      trustedBy: "",
+      users: "",
     },
     showCase: {
       faster: "Faster than the rest",
@@ -23,7 +23,7 @@ export const translations = {
     about: {
       whatsInMillionJS: "What's in PEPE AT SCHOOL?",
       toolsToMakeReactFaster: "The tools to make React faster, automatically.",
-      blockVirtualDom: "Đội ngũ",
+      blockVirtualDom: "Đội ngũ PAS",
       blockVirtualDomQuote: `Pepe at school`,
       millionIntroduces: "",
       blockVirtualDomDescription:
