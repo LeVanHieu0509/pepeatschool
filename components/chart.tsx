@@ -7,10 +7,10 @@ import {
   LinearScale,
   Title,
   Tooltip,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { memo } from 'react';
-import { useDarkMode } from './use-dark-mode';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { memo } from "react";
+import { useDarkMode } from "./use-dark-mode";
 
 ChartJS.register(
   CategoryScale,
@@ -18,13 +18,13 @@ ChartJS.register(
   BarElement,
   Title,
   Tooltip,
-  Legend,
+  Legend
 );
 
 const data = [
-  { framework: 'Million.js', val: 0.92 },
-  { framework: 'Preact', val: 0.59 },
-  { framework: 'React', val: 0.26 },
+  { framework: "PEPE AT SCHOOL", val: 0.92 },
+  { framework: "Preact", val: 0.59 },
+  { framework: "React", val: 0.26 },
 ];
 
 const options = {
@@ -33,13 +33,13 @@ const options = {
       display: false,
     },
   },
-  indexAxis: 'y' as const,
+  indexAxis: "y" as const,
   scales: {
     x: {
       max: 1,
       ticks: {
         format: {
-          style: 'percent',
+          style: "percent",
           minimumFractionDigits: 0,
           maximumFractionDigits: 1,
         },
@@ -51,13 +51,13 @@ const options = {
 export function Chart() {
   const isDarkMode = useDarkMode();
 
-  defaults.borderColor = isDarkMode ? '#2b2b2d' : '#e1e3eb';
-  defaults.color = isDarkMode ? '#e1e3eb' : '#545864';
+  defaults.borderColor = isDarkMode ? "#2b2b2d" : "#e1e3eb";
+  defaults.color = isDarkMode ? "#e1e3eb" : "#545864";
   defaults.font.size = 16;
-  defaults.font.family = 'Inter, sans-serif';
+  defaults.font.family = "Inter, sans-serif";
 
-  const color = isDarkMode ? '#54527b' : '#dcc9e8';
-  const backgroundColor = ['#b073d9', color, color];
+  const color = isDarkMode ? "#54527b" : "#dcc9e8";
+  const backgroundColor = ["#b073d9", color, color];
 
   return (
     <div className="p-4 rounded-lg w-auto">
@@ -83,7 +83,7 @@ export const BarChart = memo(
           labels: data.map((row) => row.framework),
           datasets: [
             {
-              label: '% of vanilla JavaScript',
+              label: "% of vanilla JavaScript",
               data: data.map((row) => row.val),
               backgroundColor,
               barPercentage: 0.5,
@@ -98,5 +98,5 @@ export const BarChart = memo(
       prevProps.backgroundColor[0] === nextProps.backgroundColor[0] &&
       prevProps.darkMode === nextProps.darkMode
     );
-  },
+  }
 );

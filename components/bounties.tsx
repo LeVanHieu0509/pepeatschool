@@ -1,33 +1,33 @@
 // Copyright (c) 2023 Algora PBC.
 // https://github.com/algora-io/sdk/blob/5bcda5de293246b959b5e5ea81529ec46d7a8fe3/README.md
 
-import { useEffect, useState } from 'react';
-import { algora, type AlgoraOutput } from '@algora/sdk';
-import Link from 'next/link';
-import { Spotlight } from './spotlight';
+import { useEffect, useState } from "react";
+import { algora, type AlgoraOutput } from "@algora/sdk";
+import Link from "next/link";
+import { Spotlight } from "./spotlight";
 
-const org = 'aidenybai';
+const org = "aidenybai";
 const limit = 2;
 
 type RemoteData<T> =
-  | { _tag: 'loading' }
-  | { _tag: 'failure'; error: Error }
-  | { _tag: 'success'; data: T };
+  | { _tag: "loading" }
+  | { _tag: "failure"; error: Error }
+  | { _tag: "success"; data: T };
 
-type Bounty = AlgoraOutput['bounty']['list']['items'][number];
+type Bounty = AlgoraOutput["bounty"]["list"]["items"][number];
 
 export function Bounties() {
   const [bounties, setBounties] = useState<RemoteData<Bounty[]>>({
-    _tag: 'loading',
+    _tag: "loading",
   });
 
   useEffect(() => {
     const ac = new AbortController();
 
     algora.bounty.list
-      .query({ org, limit, status: 'active' }, { signal: ac.signal })
-      .then(({ items: data }) => setBounties({ _tag: 'success', data }))
-      .catch((error: Error) => setBounties({ _tag: 'failure', error }));
+      .query({ org, limit, status: "active" }, { signal: ac.signal })
+      .then(({ items: data }) => setBounties({ _tag: "success", data }))
+      .catch((error: Error) => setBounties({ _tag: "failure", error }));
 
     return () => ac.abort();
   }, []);
@@ -36,13 +36,13 @@ export function Bounties() {
     <div className="space-y-2">
       <Callout />
       <ul className="hidden sm:grid sm:grid-cols-2 gap-2">
-        {bounties._tag === 'success' &&
+        {bounties._tag === "success" &&
           bounties.data.map((bounty) => (
             <li key={bounty.id}>
               <BountyCard bounty={bounty} />
             </li>
           ))}
-        {bounties._tag === 'loading' &&
+        {bounties._tag === "loading" &&
           Array(limit)
             .fill(0)
             .map((_, i) => (
@@ -60,8 +60,7 @@ function BountyCard(props: { bounty: Bounty }) {
     <Link
       href={props.bounty.task.url}
       rel="noopener noreferrer"
-      className="block group relative h-full rounded-lg border border-zinc-400/50 dark:border-purple-500/50 bg-gradient-to-br from-zinc-300/30 via-zinc-300/40 to-zinc-300/50 dark:from-purple-600/20 dark:via-purple-600/30 dark:to-purple-600/40 md:gap-8 transition-colors hover:border-zinc-400 hover:dark:border-purple-500 hover:bg-zinc-300/10 hover:dark:bg-zinc-600/5 !no-underline"
-    >
+      className="block group relative h-full rounded-lg border border-zinc-400/50 dark:border-purple-500/50 bg-gradient-to-br from-zinc-300/30 via-zinc-300/40 to-zinc-300/50 dark:from-purple-600/20 dark:via-purple-600/30 dark:to-purple-600/40 md:gap-8 transition-colors hover:border-zinc-400 hover:dark:border-purple-500 hover:bg-zinc-300/10 hover:dark:bg-zinc-600/5 !no-underline">
       <Spotlight className="bg-zinc-300/30 dark:bg-purple-600/20">
         <div className="p-4">
           <div className="text-2xl font-bold text-green-500 group-hover:text-green-600 dark:text-green-400 dark:group-hover:text-green-300 transition-colors">
@@ -99,14 +98,13 @@ function Callout() {
       </div>
       <div className="w-full min-w-0 leading-7">
         <p className="mt-6 leading-7 first:mt-0">
-          We&apos;re actively looking for and <strong>paying</strong>{' '}
-          contributors for Million.js. Check out our{' '}
+          We&apos;re actively looking for and <strong>paying</strong>{" "}
+          contributors for PEPE AT SCHOOL. Check out our{" "}
           <Link
             href={`https://console.algora.io/org/${org}/bounties`}
             target="_blank"
             rel="noopener noreferrer"
-            className="!underline font-medium"
-          >
+            className="!underline font-medium">
             active bounties
             <span className="sr-only"> (opens in a new tab)</span>
           </Link>

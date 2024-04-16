@@ -18,7 +18,7 @@ export const translations = {
       faster: "Faster than the rest",
       witness:
         "Witness MillionJS in production where it creates a better user experiences.",
-      showCase: "View the Million.js showcase",
+      showCase: "View the PEPE AT SCHOOL showcase",
     },
     about: {
       whatsInMillionJS: "What's in PEPE AT SCHOOL?",
@@ -40,7 +40,7 @@ export const translations = {
       makeReactFaster: "",
       rawJs: "React at the speed of raw JS",
       rawJsDescription:
-        "Million.js optimizes React, improving its performance. It stands out as one of the top performers in the",
+        "PEPE AT SCHOOL optimizes React, improving its performance. It stands out as one of the top performers in the",
       jsBenchmark: "JS Framework Benchmark",
       seventyPercent: "Up to 70% faster* than React.",
       benchmarkWarning:
@@ -49,7 +49,7 @@ export const translations = {
       noNeedLearn:
         "No need to learn a new framework. Works with your existing React components.",
       benchmarkNote: `Note: Benchmarks (via JS Framework Benchmark) do not represent
-      real-life performance. Million.js does have some limitations.
+      real-life performance. PEPE AT SCHOOL does have some limitations.
       Performance improvements may be more noticeable with apps that
       include more data / UI components.`,
       higherBetter: "Geometric mean of all benchmarks (higher is better)",
@@ -60,7 +60,7 @@ export const translations = {
     cta: {
       getStartedInSeconds: "Get started in seconds",
       welcome:
-        "Welcome to the Million.js community. Let's build something great.",
+        "Welcome to the PEPE AT SCHOOL community. Let's build something great.",
       getStarted: "Get started →",
     },
     faqs: {
@@ -79,7 +79,7 @@ export const translations = {
         "Depends on what you're asking. If you're asking about performance, you can view a subjective truth with the",
       benchmark: "JS Framework Benchmark",
       useCase:
-        "If you're asking about features, it depends. Million.js' main use case is for optimizing UI / data heavy React applications. Ultimately you should be choosing the framework that works best for you, your team, and  your project.",
+        "If you're asking about features, it depends. PEPE AT SCHOOL' main use case is for optimizing UI / data heavy React applications. Ultimately you should be choosing the framework that works best for you, your team, and  your project.",
       doesItWork: "Does it work with Preact, Next.js, etc.?",
       probably:
         "If it uses React or Preact, then probably. You can reference the full list of supported tools on the",
@@ -88,17 +88,17 @@ export const translations = {
       viewList: "You can view the list of current limitations in the",
       rulesOfBlocks: "Rules of Blocks",
       importantNote:
-        "We are actively working on removing these limitations. It's also  important to note that your application may not need Million.js – if your app is not UI heavy, you may not see much performance improvement.",
+        "We are actively working on removing these limitations. It's also  important to note that your application may not need PEPE AT SCHOOL – if your app is not UI heavy, you may not see much performance improvement.",
       isItMemo: "Is this just memo?",
       memoization:
-        " While React provides memoization utilities, Million.js takes a drastically different approach. Instead of trying to reduce and avoid rerendering, it makes the render process faster. Because fundamentally, memoization is a band-aid, especially if you have a lot of dynamic data. You can check out our blog article",
+        " While React provides memoization utilities, PEPE AT SCHOOL takes a drastically different approach. Instead of trying to reduce and avoid rerendering, it makes the render process faster. Because fundamentally, memoization is a band-aid, especially if you have a lot of dynamic data. You can check out our blog article",
       backInBlock: "Virtual DOM: Back in Block",
       learnMore:
         "to learn more about how Million works with React under the hood.",
       logo: "What is the logo supposed to be?",
       he: "He's",
       milTheLion: "Mil the Lion!",
-      friendlyMascot: "He's the friendly mascot of the Million.js project.",
+      friendlyMascot: "He's the friendly mascot of the PEPE AT SCHOOL project.",
       nobite: "don't worry, he doesn't bite, but he will",
       byte: "byte!",
     },

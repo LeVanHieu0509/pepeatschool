@@ -146,7 +146,7 @@ export function Showdown({ initStart = false, amount = 1000 }) {
                 ref.current?.renderMillion();
               }}
               className="bg-[#b073d9] gradient-bg transition-all active:scale-105 hover:opacity-90 active:opacity-90 font-bold text-white py-2 px-4 rounded-full shadow">
-              Million.js
+              PEPE AT SCHOOL
             </button>
             <button
               onClick={() => {

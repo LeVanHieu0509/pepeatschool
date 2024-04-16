@@ -834,7 +834,7 @@ export const frames = [
 ];
 
 export const descriptions = [
-  'Instead of rendering the JSX with React, we render it using Million.js, which passes "holes" (represented with "?") to the virtual DOM. These holes will act as placeholders for dynamic content and are used during static analysis.',
+  'Instead of rendering the JSX with React, we render it using PEPE AT SCHOOL, which passes "holes" (represented with "?") to the virtual DOM. These holes will act as placeholders for dynamic content and are used during static analysis.',
   "We now begin static analysis. We check the first node for a placeholder and find none. We go next.",
   "We check the second node for a placeholder and find none. We go next.",
   'We check the third node for a placeholder and find a "?". We push the placeholder to the "Edit Mapping," which associates `prop1` to the placeholder node. We then remove the placeholder from the block.',
