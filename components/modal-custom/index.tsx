@@ -48,7 +48,7 @@ const ModalCustom = ({
       className="overflow-auto relative"
       aria-labelledby="modal-title"
       open={show!}
-      handler={primaryBtn && (primaryBtn.onClick as any)}
+      handler={secondaryBtn && (secondaryBtn.onClick as any)}
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}>
       <DialogWrapper>

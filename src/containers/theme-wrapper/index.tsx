@@ -35,9 +35,11 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     title: "Thông báo",
   });
 
-  const linkNotConnectWallet = !["/_error", "/index.en-US"].includes(
+  const linkNotConnectWallet = !["/_error", "/index.en-US", "/"].includes(
     router.pathname
   );
+
+  console.log("router.pathname", router.pathname);
 
   useEffect(() => {
     const listenter = function (ev: MouseEvent) {

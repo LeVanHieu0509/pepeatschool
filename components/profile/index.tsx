@@ -44,12 +44,12 @@ const Profile = ({}: ProfileProps) => {
             <div className="text-center my-4">
               <img
                 className="h-32 w-32 rounded-full border-4 border-white dark:border-gray-800 mx-auto my-4"
-                src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128"
+                src="https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png"
                 alt=""
               />
               <div className="py-2">
                 <h3 className="font-bold text-2xl text-gray-800 dark:text-white mb-1">
-                  No name
+                  PEPE AT SCHOOL
                 </h3>
                 <p className=" text-gray-700 dark:text-gray-300 text-sm">
                   Address: {account?.slice(0, 10)}...
@@ -61,7 +61,7 @@ const Profile = ({}: ProfileProps) => {
               {/* <button className="flex-1 rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
             Follow
           </button> */}
-              <button className="flex-1 rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
+              <button className="transition-all hover:bg-green-200 flex-1 rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
                 Logout
               </button>
             </div>

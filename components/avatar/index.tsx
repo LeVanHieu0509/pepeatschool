@@ -23,16 +23,16 @@ const Avatar = ({}: AvatarProps) => {
   return (
     <>
       {account ? (
-        <div className="circle" onClick={() => setOpen(true)}>
+        <div className="circle cursor-pointer" onClick={() => setOpen(true)}>
           <img
             height="40"
             width="40"
-            src="http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128"
+            src="https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png"
             alt="Cloud Chen"
           />
         </div>
       ) : (
-        <div className="circle">
+        <div className="circle cursor-pointer">
           <img
             height="40"
             width="40"
