@@ -873,7 +873,10 @@ const config: DocsThemeConfig = {
       (frontMatter.date as string | undefined) ?? pathname === "/"
         ? "million.dev"
         : pathname;
-    const canonical = new URL(asPath, "https://million.dev").toString();
+    const canonical = new URL(
+      asPath,
+      "https://pepeatschool-pro.vercel.app/"
+    ).toString();
 
     let ogUrl = `https://million.dev/default-og.png`;
 
@@ -904,8 +907,18 @@ const config: DocsThemeConfig = {
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={description} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content={ogUrl} />
-        <meta property="og:image" content={ogUrl} />
+        <meta
+          property="twitter:image"
+          content={
+            "https://ih1.redbubble.net/image.732405687.1806/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"
+          }
+        />
+        <meta
+          property="og:image"
+          content={
+            "https://ih1.redbubble.net/image.732405687.1806/st,small,507x507-pad,600x600,f8f8f8.u2.jpg"
+          }
+        />
         <link rel="shortcut icon" href={favicon} type="image/svg+xml" />
         <link rel="apple-touch-icon" href={favicon} type="image/svg+xml" />
         <meta name="apple-mobile-web-app-title" content={title} />
