@@ -14,7 +14,7 @@ import { track } from "@vercel/analytics";
 import AppContext from "src/contexts/app";
 
 const CountUp = dynamic(() => import("react-countup"), {
-  loading: () => <span>70</span>,
+  loading: () => <span>95</span>,
   ssr: false,
 });
 
