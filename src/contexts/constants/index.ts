@@ -6,7 +6,7 @@ const artifacts = {
 
 export const processCus = {
   TOKEN: {
-    PEPE_ADDRESS: "0x41c3fc84F65308a29Cd3Da2AB7F5584F4A978e8b",
+    PEPE_ADDRESS: "0xF82Fd4B8e8F2Cf058a02A84Ed0D9187eE908dAa1",
   },
 };
 export const PepeTokenAddress = processCus.TOKEN.PEPE_ADDRESS;
