@@ -22,7 +22,7 @@ export const translations = {
     },
     about: {
       whatsInMillionJS: "What's in PEPE AT SCHOOL?",
-      toolsToMakeReactFaster: "The tools to make React faster, automatically.",
+      toolsToMakeReactFaster: "",
       blockVirtualDom: "Đội ngũ PAS",
       blockVirtualDomQuote: `Pepe at school`,
       millionIntroduces: "",

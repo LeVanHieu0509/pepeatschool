@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
 import TextsLogo from "../../public/texts.webp";
 import HackClubLogo from "../../public/black-rook.svg";
+import ChainLink from "../../public/chainLink.svg";
 import OpenSaucedLogo from "../../public/uniswap.svg";
 import MetamaskLogo from "../../public/metamask.svg";
 import { RetroGrid } from "../retro-grid";
@@ -219,7 +220,20 @@ export function Companies() {
             src={OpenSaucedLogo as string}
             width={150}
             height={25}
-            className="invert dark:invert-0"
+            alt="OpenSauced"
+          />
+        </div>
+      ),
+    },
+    {
+      url: "https://chain.link/",
+      component: (
+        <div key="opensauced">
+          <Image
+            src={ChainLink as string}
+            width={150}
+            height={25}
+            className=""
             alt="OpenSauced"
           />
         </div>
