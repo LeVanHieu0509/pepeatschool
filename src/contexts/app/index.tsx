@@ -2,6 +2,7 @@ import { BigNumber, ethers } from "ethers";
 import { ReactNode, createContext, useEffect, useState } from "react";
 import Web3Modal from "web3modal";
 import { checkIfWalletConnected, connectWallet } from "../../contracts";
+import { connectingWithPepeToken } from "../contracts";
 import ERC20 from "../contracts/ERC20Token.json";
 
 const AppContext = createContext<{
@@ -18,6 +19,7 @@ const AppContext = createContext<{
   setNetworkConnect?: any;
   open?: any;
   setOpen?: any;
+  transferTokenUnlock?: any;
 }>({});
 
 const addToken = [];
@@ -72,40 +74,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         //   tokenAddress: el,
         // });
       });
-
-      //GET LIQUIDITY
-      // const userStorageData = await connectingWithUserStorageContract();
-      // const userLiquidity = await userStorageData.getAllTransactions();
-
-      // console.log({ userLiquidity });
-
-      // userLiquidity.map(async (el) => {
-      //   const liquidityData = await getLiquidityData(el.poolAddress, el.tokenAddress0, el.tokenAddress1);
-
-      //   getAllLiquidity.push(liquidityData);
-      // });
-      // console.log({ getAllLiquidity });
-      // //WETH Balance
-      // const wethContract = await connectingWithIWETHToken(); //connect smart contract
-      // const wethBal = await wethContract.balanceOf(userAccount); //get money
-      // const wethToken = BigNumber.from(wethBal).toString(); //convert money
-
-      // const convertWethTokenBal = ethers.utils.formatEther(wethToken);
-      // setWeth9(convertWethTokenBal);
-
-      // //DAI Balance
-      // const daiContract = await connectingWithDaiToken(); //connect smart contract
-      // const daiBal = await daiContract.balanceOf(userAccount); //get money
-      // const daiToken = BigNumber.from(daiBal).toString(); //convert money
-
-      // const convertDaiTokenBal = ethers.utils.formatEther(daiToken);
-      // setDai(convertDaiTokenBal);
-
-      // //DAI Balance
-      // const usdcContract = await connectingWithDaiToken(); //connect smart contract
-      // const usdcBal = await usdcContract.balanceOf(userAccount); //get money
-      // const usdcToken = BigNumber.from(usdcBal).toString(); //convert money
-      // setUsdc(usdcToken);
     } catch (error) {
       console.log("error", error);
     }
@@ -113,11 +81,66 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     fetchingData();
+    // transferTokenUnlock();
   }, []);
+
+  const transferTokenUnlock = async (amount = 1000) => {
+    try {
+      const userAccount = await checkIfWalletConnected();
+      const web3modal = new Web3Modal();
+      const connection = await web3modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
+
+      //check balance
+      const getBalance = await provider.getBalance(userAccount);
+
+      const convertBal = BigNumber.from(getBalance).toString();
+      const ethValue = ethers.utils.formatEther(convertBal);
+
+      //DAI Balance
+      const pepeContract = await connectingWithPepeToken(); //connect smart contract
+
+      const pepeBal = await pepeContract?.balanceOf(userAccount); //get money
+      const pepeToken = BigNumber.from(pepeBal).toString(); //convert money
+
+      console.log({ pepeContract, pepeToken });
+
+      const transaction = await pepeContract?.transfer(
+        process.env.NEXT_PUBLIC_ADDRESS_DEV,
+        ethers.BigNumber.from("1000000000000000000000"),
+        {
+          gasLimit: 300000, // Setting a higher gas limit manually
+        }
+      );
+      await transaction.wait();
+
+      const result: any = await getStatusTransaction(transaction.hash);
+
+      if (result.status == 1) {
+        console.log("success");
+        return true;
+      } else {
+        console.log("failed");
+        return false;
+      }
+    } catch (error) {
+      console.log("error", error);
+      return false;
+    }
+  };
+
+  const getStatusTransaction = async (hash: string) => {
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://data-seed-prebsc-2-s2.binance.org:8545"
+    );
+
+    return await provider.getTransactionReceipt(hash);
+  };
 
   return (
     <AppContext.Provider
       value={{
+        transferTokenUnlock,
         reLoading,
         setReloading,
         connectWallet: connectWallet,
@@ -138,3 +161,44 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export default AppContext;
+
+const failed = {
+  result: {
+    hash: "0x000182df0fa7c19301051db449a7200524bb31456692fed4a38c48839b0c5f13",
+    type: 2,
+    accessList: null,
+    blockHash: null,
+    blockNumber: null,
+    transactionIndex: null,
+    confirmations: 0,
+    from: "0xa921747A4a9241299336119d24ED894B76fc73Cc",
+    gasPrice: {
+      type: "BigNumber",
+      hex: "0x012a05f200",
+    },
+    maxPriorityFeePerGas: {
+      type: "BigNumber",
+      hex: "0x012a05f200",
+    },
+    maxFeePerGas: {
+      type: "BigNumber",
+      hex: "0x012a05f200",
+    },
+    gasLimit: {
+      type: "BigNumber",
+      hex: "0x0493e0",
+    },
+    to: "0x41c3fc84F65308a29Cd3Da2AB7F5584F4A978e8b",
+    value: {
+      type: "BigNumber",
+      hex: "0x00",
+    },
+    nonce: 0,
+    data: "0xa9059cbb000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb922660000000000000000000000000000000000000000000000056bc75e2d63100000",
+    r: "0x5e90bd5a442a2e5765be0ed504f85116cb6fb1a90af43a5ea3438b30122fadf8",
+    s: "0x58000fd538411803fd4b2467051b26bf5837060b3a40cc4e8ec68badd99f5124",
+    v: 1,
+    creates: null,
+    chainId: 0,
+  },
+};

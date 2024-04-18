@@ -1,12 +1,11 @@
-import Head from "next/head";
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import ModalCustom from "@components/modal-custom";
+import { useRouter } from "next/router";
+import React, { useContext, useEffect, useState } from "react";
+import { ShowModal } from "src/@custom-types";
+import AppContext from "src/contexts/app";
 import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 import { AdminLayoutWrapper } from "./styled";
-import { useRouter } from "next/router";
-import ModalCustom from "@components/modal-custom";
-import { ShowModal } from "src/@custom-types";
-import AppContext from "src/contexts/app";
 
 interface ThemeWrapperProps {
   children: React.ReactNode;
@@ -15,12 +14,14 @@ interface ThemeWrapperProps {
 
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const router = useRouter();
+  const [unLock, setUnlock] = useState(false);
   const {
     account,
     ether,
     networkConnect,
     tokenData,
     connectWallet,
+    transferTokenUnlock,
     setReloading,
     loading,
     reLoading,
@@ -65,10 +66,17 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (linkNotConnectWallet && router.pathname) {
+      setUnlock(false);
+    }
+  }, [router.pathname]);
+
   return (
     <ThemeProvider theme={LightTheme}>
       {children}
       <AdminLayoutWrapper>{component}</AdminLayoutWrapper>
+
       {linkNotConnectWallet && !account ? (
         <ModalCustom
           show={true}
@@ -93,6 +101,36 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
             },
           }}>
           Chúng tôi cần kết nối với Ví của bạn để xem được trang này!
+        </ModalCustom>
+      ) : null}
+
+      {linkNotConnectWallet && account && !unLock ? (
+        <ModalCustom
+          show={true}
+          onCloseModal={() => {
+            setShowModal({
+              show: false,
+            });
+            router.push("/");
+          }}
+          title="Thông báo"
+          primaryBtn={{
+            text: "Mở khoá",
+            onClick: async () => {
+              const result = await transferTokenUnlock();
+              setUnlock(result);
+            },
+          }}
+          secondaryBtn={{
+            text: "Bỏ qua",
+            onClick: () => {
+              setShowModal({
+                show: false,
+              });
+              router.push("/");
+            },
+          }}>
+          Bạn cần dùng 1000 PEPEATSCHOOL để mở khoá bài viết?
         </ModalCustom>
       ) : null}
     </ThemeProvider>
