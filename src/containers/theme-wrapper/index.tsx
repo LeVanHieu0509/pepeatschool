@@ -6,6 +6,7 @@ import AppContext from "src/contexts/app";
 import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 import { AdminLayoutWrapper } from "./styled";
+import { Alert } from "@components/alert";
 
 interface ThemeWrapperProps {
   children: React.ReactNode;
@@ -39,8 +40,6 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const linkNotConnectWallet = !["/_error", "/index.en-US", "/"].includes(
     router.pathname
   );
-
-  console.log("router.pathname", router.pathname);
 
   useEffect(() => {
     const listenter = function (ev: MouseEvent) {
@@ -118,7 +117,20 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
             text: "Mở khoá",
             onClick: async () => {
               const result = await transferTokenUnlock();
-              setUnlock(result);
+
+              if (result) {
+                setUnlock(result);
+              } else {
+                Alert(
+                  "WARNING",
+                  "Bạn không đủ token PEPE AT SCHOOL để mở khoá bài viết."
+                );
+                router.push("/");
+                setShowModal({
+                  show: false,
+                });
+                return;
+              }
             },
           }}
           secondaryBtn={{

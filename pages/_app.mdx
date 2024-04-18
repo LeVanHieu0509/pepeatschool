@@ -8,6 +8,7 @@ import { LightTheme } from "../styles/theme.tsx";
 import {AppProvider} from '../src/contexts/app/index.tsx'
 import { ThemeProvider as ThemeMaterialTailwind } from "@material-tailwind/react";
 import ThemeWrapper from "../src/containers/theme-wrapper";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
             
               <Analytics />
               <SpeedInsights />
+                     <ToastContainer />
                      </ThemeWrapper>
           </AppProvider>
         </ThemeProvider>

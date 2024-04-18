@@ -103,8 +103,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       const pepeBal = await pepeContract?.balanceOf(userAccount); //get money
       const pepeToken = BigNumber.from(pepeBal).toString(); //convert money
 
-      console.log({ pepeContract, pepeToken });
-
       const transaction = await pepeContract?.transfer(
         process.env.NEXT_PUBLIC_ADDRESS_DEV,
         ethers.BigNumber.from("1000000000000000000000"),
