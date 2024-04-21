@@ -78,7 +78,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
 
       {linkNotConnectWallet && !account ? (
         <ModalCustom
-          show={true}
+          show={false}
           onCloseModal={() => {
             setShowModal({
               show: false,
@@ -103,7 +103,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
         </ModalCustom>
       ) : null}
 
-      {linkNotConnectWallet && account && !unLock ? (
+      {linkNotConnectWallet && account && !Lock? (
         <ModalCustom
           show={true}
           onCloseModal={() => {

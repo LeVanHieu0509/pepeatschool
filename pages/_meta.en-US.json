@@ -9,7 +9,7 @@
   },
   "docs": {
     "type": "page",
-    "title": "Chuyên gia"
+    "title": "Kiến thức"
   },
   "blog": {
     "type": "page",
@@ -19,6 +19,16 @@
       "sidebar": true,
       "toc": true,
       "pagination": false
+    }
+  },
+  "News":{
+    "type":"page",
+    "title":"Tin tức",
+    "theme":{
+      "typesetting":"article",
+      "sidebar":true,
+      "toc":true,
+      "pagination":false
     }
   }
 }

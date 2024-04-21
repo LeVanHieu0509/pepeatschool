@@ -1,5 +1,4 @@
 require("dotenv").config();
-
 const artifacts = {
   PEPEATSCHOOLTESTING: require("../../Abi/PEPEATSCHOOL.json"),
 };
@@ -11,3 +10,4 @@ export const processCus = {
 };
 export const PepeTokenAddress = processCus.TOKEN.PEPE_ADDRESS;
 export const PepeTokenABI = artifacts.PEPEATSCHOOLTESTING.abi;
+

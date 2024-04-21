@@ -69,7 +69,7 @@ export function Hero() {
             <h1 className="text-zinc-900 dark:text-white font-extrabold text-5xl md:text-6xl xl:text-7xl">
               {hero.makeReact}{" "}
               <span className="gradient-text inline-block">
-                <CountUp start={10} end={70} useEasing />% {hero.faster}
+                <CountUp start={10} end={200} useEasing />% {hero.faster}
               </span>
             </h1>
             <p className="mt-8 text-xl text-zinc-600 dark:text-zinc-300 leading-8">

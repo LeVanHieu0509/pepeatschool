@@ -1313,32 +1313,34 @@ const config: DocsThemeConfig = {
           <p className="text-base pb-2 text-black font-bold">Tài nguyên</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <a href="/docs/road-map-cho-nguoi-moi" className="text-sm">
-                Tài liệu
+              <a href="https://drive.google.com/drive/folders/1tuaa2ClldLZ7T-XtbgNTz0R43qnR788F?usp=sharing" className="text-sm">
+                PAS whitepaper
               </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <p className="text-base pb-2 text-black font-bold">Hệ thống</p>
+          <p className="text-base pb-2 text-black font-bold">Mạng xã hội</p>
           <ul className="flex flex-col gap-2">
-            <li>
-              <a href="/showcase" className="text-sm">
-                Showcase
+            <li>          
+              <a style={{marginLeft:'-10px'}} className="flex " href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
+              <img  src="https://mspoweruser.com/wp-content/uploads/2022/03/Telegram-Logo.png" alt="telegram" 
+              width={"40"}
+              height={"30"}
+              />
+              <p className="">Telegram</p>
               </a>
             </li>
             <li>
-              <a
-                href="https://github.com/aidenybai/million/blob/main/.github/CONTRIBUTING.md"
-                className="text-sm">
-                Contributing
+            <a style={{marginLeft:'-10px'}} className="flex " href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
+              <img  src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-Log%D0%BE.png" alt="X" 
+              width={"40"}
+              height={"30"}
+              />
+              <p  className="">Twitter</p>
               </a>
-            </li>
-            <li>
-              <a href="https://million.dev/chat" className="text-sm">
-                Discord
-              </a>
+          
             </li>
           </ul>
         </div>
@@ -1347,8 +1349,8 @@ const config: DocsThemeConfig = {
           <p className="text-base pb-2 text-black font-bold">Chúng tôi</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <a href="/foundation" className="text-sm">
-                PEPEATSCHOOL Foundation
+              <a href="/" className="text-sm">
+                PEPEATSCHOOL teams
               </a>
             </li>
           </ul>

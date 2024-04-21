@@ -754,6 +754,15 @@ const style = css`
     height: 40px;
     width: 40px;
   }
+  .cir-plus{
+    height: 80px;
+    width: 80px;
+  }
+  .cir-plus:hover{
+    transition: ease-out 0.2s;
+    border: 4px solid rgba(19, 231, 12, 0.2);
+    -webkit-transition: ease-out 0.2s;
+  }
   .circle img {
     border-radius: 50%; /* relative value for
 				   adjustable image size */
