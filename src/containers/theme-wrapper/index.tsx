@@ -103,7 +103,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
         </ModalCustom>
       ) : null}
 
-      {linkNotConnectWallet && account && !Lock? (
+      {linkNotConnectWallet && account && unLock ? (
         <ModalCustom
           show={true}
           onCloseModal={() => {

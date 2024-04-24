@@ -1,8 +1,4 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
-
-
-export const ProfileAuthor1=()=>{
+export const ProfileAuthor1 = () => {
   return (
     <div className="text-sm leading-6">
       <figure className="w-50 relative flex flex-col-reverse bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -26,7 +22,8 @@ export const ProfileAuthor1=()=>{
       </figure>
     </div>
   );
-}
+};
+
 export const ProfileAuthor2 = () => {
   return (
     <div className="text-sm leading-6">
@@ -77,7 +74,8 @@ export const ProfileAuthor3 = () => {
     </div>
   );
 };
-export const ProfileAuthor4=()=>{
+
+export const ProfileAuthor4 = () => {
   return (
     <div className="text-sm leading-6">
       <figure className="w-50 relative flex flex-col-reverse bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -91,17 +89,16 @@ export const ProfileAuthor4=()=>{
           />
           <div className="flex-auto">
             <div className="text-base text-slate-900 font-semibold dark:text-slate-200">
-              Trường Đặng 
+              Trường Đặng
             </div>
-            <div className="mt-0.5 dark:text-slate-300">
-              Nhà đầu tư
-            </div>
+            <div className="mt-0.5 dark:text-slate-300">Nhà đầu tư</div>
           </div>
         </figcaption>
       </figure>
     </div>
   );
-}
+};
+
 export const ProfileAuthor5 = () => {
   return (
     <div className="text-sm leading-6">
@@ -118,9 +115,7 @@ export const ProfileAuthor5 = () => {
             <div className="text-base text-slate-900 font-semibold dark:text-slate-200">
               Quế Trân Huỳnh
             </div>
-            <div className="mt-0.5 dark:text-slate-300">
-              Sinh viên đại học
-            </div>
+            <div className="mt-0.5 dark:text-slate-300">Sinh viên đại học</div>
           </div>
         </figcaption>
       </figure>
@@ -143,16 +138,15 @@ export const ProfileAuthor6 = () => {
             <div className="text-base text-slate-900 font-semibold dark:text-slate-200">
               Ngô Minh Giang
             </div>
-            <div className="mt-0.5 dark:text-slate-300">
-              Giảng Viên
-            </div>
+            <div className="mt-0.5 dark:text-slate-300">Giảng Viên</div>
           </div>
         </figcaption>
       </figure>
     </div>
   );
 };
-export const ProfileAuthor7=()=>{
+
+export const ProfileAuthor7 = () => {
   return (
     <div className="text-sm leading-6">
       <figure className="w-50 relative flex flex-col-reverse bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -168,15 +162,14 @@ export const ProfileAuthor7=()=>{
             <div className="text-base text-slate-900 font-semibold dark:text-slate-200">
               Ryan Nguyễn
             </div>
-            <div className="mt-0.5 dark:text-slate-300">
-              Nhà đầu tư
-            </div>
+            <div className="mt-0.5 dark:text-slate-300">Nhà đầu tư</div>
           </div>
         </figcaption>
       </figure>
     </div>
   );
-}
+};
+
 export const ProfileAuthor8 = () => {
   return (
     <div className="text-sm leading-6">
@@ -227,7 +220,8 @@ export const ProfileAuthor9 = () => {
     </div>
   );
 };
-export const ProfileAuthor10=()=>{
+
+export const ProfileAuthor10 = () => {
   return (
     <div className="text-sm leading-6">
       <figure className="w-50 relative flex flex-col-reverse bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -243,15 +237,14 @@ export const ProfileAuthor10=()=>{
             <div className="text-base text-slate-900 font-semibold dark:text-slate-200">
               Đặng Thiên Trang
             </div>
-            <div className="mt-0.5 dark:text-slate-300">
-              Nhà đầu tư
-            </div>
+            <div className="mt-0.5 dark:text-slate-300">Nhà đầu tư</div>
           </div>
         </figcaption>
       </figure>
     </div>
   );
-}
+};
+
 export const ProfileAuthor11 = () => {
   return (
     <div className="text-sm leading-6">
@@ -277,7 +270,8 @@ export const ProfileAuthor11 = () => {
     </div>
   );
 };
-export const ProfileAuthor12=()=>{
+
+export const ProfileAuthor12 = () => {
   return (
     <div className="text-sm leading-6">
       <figure className="w-50 relative flex flex-col-reverse bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -294,14 +288,14 @@ export const ProfileAuthor12=()=>{
               Nguyễn Tấn Hiệp
             </div>
             <div className="mt-0.5 dark:text-slate-300">
-              Chuyên gia phân tích thị 
+              Chuyên gia phân tích thị
             </div>
           </div>
         </figcaption>
       </figure>
     </div>
   );
-}
+};
 export const ProfileAuthor13 = () => {
   return (
     <div className="text-sm leading-6">
@@ -352,7 +346,8 @@ export const ProfileAuthor14 = () => {
     </div>
   );
 };
-export const ProfileAuthorGrayScale=()=>{
+
+export const ProfileAuthorGrayScale = () => {
   return (
     <div className="text-sm leading-6">
       <figure className="w-50 relative flex flex-col-reverse bg-slate-100 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -376,7 +371,7 @@ export const ProfileAuthorGrayScale=()=>{
       </figure>
     </div>
   );
-}
+};
 export const ProfileAuthorBlackRock = () => {
   return (
     <div className="text-sm leading-6">
@@ -396,7 +391,7 @@ export const ProfileAuthorBlackRock = () => {
               BlackRock
             </div>
             <div className="mt-0.5 dark:text-slate-300">
-              Quỹ đầu tư hàng đầu 
+              Quỹ đầu tư hàng đầu
             </div>
           </div>
         </figcaption>
