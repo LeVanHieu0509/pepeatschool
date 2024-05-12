@@ -21,14 +21,34 @@
       "pagination": false
     }
   },
-  "News":{
-    "type":"page",
-    "title":"Tin tức",
-    "theme":{
-      "typesetting":"article",
-      "sidebar":true,
-      "toc":true,
-      "pagination":false
+  "News": {
+    "type": "page",
+    "title": "Tin tức",
+    "theme": {
+      "typesetting": "article",
+      "sidebar": true,
+      "toc": true,
+      "pagination": false
+    }
+  },
+  "course": {
+    "type": "page",
+    "title": "Khoá học",
+    "theme": {
+      "typesetting": "article",
+      "sidebar": true,
+      "toc": true,
+      "pagination": false
+    }
+  },
+  "trade": {
+    "type": "page",
+    "title": "Trade",
+    "theme": {
+      "typesetting": "article",
+      "sidebar": true,
+      "toc": true,
+      "pagination": false
     }
   }
 }

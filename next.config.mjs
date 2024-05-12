@@ -22,6 +22,12 @@ const nextConfig = {
   env: {
     basePath: "",
   },
+  images: {
+    domains: [
+      "turquoise-obliged-centipede-803.mypinata.cloud",
+      "gateway.pinata.cloud",
+    ],
+  },
   async redirects() {
     return [
       {

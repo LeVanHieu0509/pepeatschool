@@ -5,7 +5,8 @@ import { ThemeProvider } from 'next-themes'
 import { ThemeProvider as ThemeProviderStyled } from "styled-components";
 import { GlobalStyle } from "../styles/globals.tsx";
 import { LightTheme } from "../styles/theme.tsx";
-import {AppProvider} from '../src/contexts/app/index.tsx'
+import {AppProvider} from '../src/contexts/app/index.tsx';
+import {NFTMarketplaceProvider} from '../src/contexts/NFT/NFTMarketplaceContext.js';
 import { ThemeProvider as ThemeMaterialTailwind } from "@material-tailwind/react";
 import ThemeWrapper from "../src/containers/theme-wrapper";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,13 +18,15 @@ export default function App({ Component, pageProps }) {
        <ThemeProviderStyled theme={LightTheme}>
         <ThemeProvider forcedTheme={Component.theme || null}>
           <AppProvider> 
+              <NFTMarketplaceProvider>
               <ThemeWrapper component={<Component {...pageProps} />}>
               <GlobalStyle />
             
               <Analytics />
               <SpeedInsights />
-                     <ToastContainer />
-                     </ThemeWrapper>
+              <ToastContainer />
+              </ThemeWrapper>
+             </NFTMarketplaceProvider>
           </AppProvider>
         </ThemeProvider>
       </ThemeProviderStyled>
