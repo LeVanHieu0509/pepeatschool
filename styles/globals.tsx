@@ -754,11 +754,11 @@ const style = css`
     height: 40px;
     width: 40px;
   }
-  .cir-plus{
+  .cir-plus {
     height: 80px;
     width: 80px;
   }
-  .cir-plus:hover{
+  .cir-plus:hover {
     transition: ease-out 0.2s;
     border: 4px solid rgba(19, 231, 12, 0.2);
     -webkit-transition: ease-out 0.2s;
@@ -779,5 +779,5 @@ const style = css`
 
 export const GlobalStyle = createGlobalStyle`
   ${style}
-
+ 
 `;

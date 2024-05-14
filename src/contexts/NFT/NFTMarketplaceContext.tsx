@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 import Wenb3Modal from "web3modal";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
@@ -13,6 +13,27 @@ import {
   providerUrl,
 } from "./constants";
 import { pinFileToIPFS, uploadMetadata } from "./pinata";
+
+const NFTMarketplaceContext = createContext<{
+  checkIfWalletConnected?: any;
+  connectWallet?: any;
+  uploadToIPFS?: any;
+  createNFT?: any;
+  fetchNFTs?: any;
+  fetchMyNFTsOrListedNFTs?: any;
+  buyNFT?: any;
+  createSale?: any;
+  currentAccount?: any;
+  titleData?: any;
+  setOpenError?: any;
+  openError?: any;
+  error?: any;
+  transferEther?: any;
+  accountBalance?: any;
+  getAllTransactions?: any;
+  transaction?: any;
+  loading?: any;
+}>({});
 
 //---FETCHING SMART CONTRACT
 // It may be read from when it is connected to a Provider or state-changing operations can be called when connected to a Signer.
@@ -42,8 +63,6 @@ const connectingWithSmartContract = async () => {
     console.log("Something went wrong while connecting with contract");
   }
 };
-
-export const NFTMarketplaceContext = React.createContext();
 
 export const NFTMarketplaceProvider = ({ children }) => {
   const titleData = "Discover, collect, and sell NFTs";
@@ -75,7 +94,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const getBalance = await provider.getBalance(accounts[0]);
 
-      const bal = ethers.utils.formatEther(getBalance); // Get the current balance of an account (by address or ENS name)
+      const bal: any = ethers.utils.formatEther(getBalance); // Get the current balance of an account (by address or ENS name)
 
       setAccountBalance(bal);
     } catch (error) {
@@ -116,32 +135,34 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   //---CREATENFT FUNCTION
-  const createNFT = async (name, price, IpfsHash, description) => {
-    if (!name || !description || !price || !IpfsHash)
+  const createNFT = async (
+    name: string,
+    price: string,
+    IpfsHash: string,
+    code: string
+  ) => {
+    if (!name || !code || !price || !IpfsHash)
       return setError("Data Is Missing"), setOpenError(true);
 
     const data = JSON.stringify({
       pinataContent: {
         name: name,
-        description: description,
+        code: code,
         external_url: "https://pinata.cloud",
         image: IpfsHash,
       },
       pinataMetadata: {
         name: name,
-        price,
-        description,
+        code: code,
       },
     });
 
-    console.log(data);
     try {
       const added = await uploadMetadata(data);
 
-      const url = `https://turquoise-obliged-centipede-803.mypinata.cloud/ipfs/${added}`;
+      const url = `https://gateway.pinata.cloud/ipfs/${added}`;
 
       await createSale(url, price);
-      router.push("/searchPage");
     } catch (error) {
       console.log("createNFT", error);
       setError("Error while creating NFT");
@@ -150,27 +171,34 @@ export const NFTMarketplaceProvider = ({ children }) => {
   };
 
   //--- createSale FUNCTION
-  const createSale = async (url, formInputPrice, isReselling, id) => {
-    try {
-      console.log(url, formInputPrice, isReselling, id);
-      const price = ethers.utils.parseUnits(formInputPrice, "ether"); //convert price
+  const createSale = async (
+    url: string,
+    formInputPrice: string,
+    isReselling?: string,
+    id?: string
+  ) => {
+    if (currentAccount) {
+      try {
+        const price = ethers.utils.parseUnits(formInputPrice, "ether"); //convert price
 
-      const contract = await connectingWithSmartContract();
+        const contract: any = await connectingWithSmartContract();
 
-      const listingPrice = await contract.getListingPrice();
+        const listingPrice = await contract.getListingPrice();
+        console.log({ contract, url, price });
+        const transaction = !isReselling
+          ? await contract.createToken(url, price, {
+              value: listingPrice.toString(),
+            })
+          : await contract.resellToken(id, price, {
+              value: listingPrice.toString(),
+            });
 
-      const transaction = !isReselling
-        ? await contract.createToken(url, price, {
-            value: listingPrice.toString(),
-          })
-        : await contract.resellToken(id, price, {
-            value: listingPrice.toString(),
-          });
-
-      await transaction.wait();
-    } catch (error) {
-      setError("error while creating sale");
-      setOpenError(true);
+        console.log({ transaction });
+        await transaction.wait();
+      } catch (error) {
+        setError("error while creating sale" + error.data.message);
+        setOpenError(true);
+      }
     }
   };
 
@@ -224,17 +252,17 @@ export const NFTMarketplaceProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (currentAccount) {
-  //     fetchNFTs();
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (currentAccount) {
+      fetchNFTs();
+    }
+  }, []);
 
   //--FETCHING MY NFT OR LISTED NFTs
-  const fetchMyNFTsOrListedNFTs = async (type) => {
+  const fetchMyNFTsOrListedNFTs = async (type?: any) => {
     try {
       if (currentAccount) {
-        const contract = await connectingWithSmartContract();
+        const contract: any = await connectingWithSmartContract();
 
         const data =
           type == "fetchItemsListed"
@@ -283,7 +311,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   //---BUY NFTs FUNCTION
   const buyNFT = async (nft) => {
     try {
-      const contract = await connectingWithSmartContract();
+      const contract: any = await connectingWithSmartContract();
       const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
 
       const transaction = await contract.createMarketSale(nft.tokenId, {
@@ -330,10 +358,10 @@ export const NFTMarketplaceProvider = ({ children }) => {
   const transferEther = async (address, ether, message) => {
     try {
       if (currentAccount) {
-        const contract = await connectingTransferContract();
+        const contract: any = await connectingTransferContract();
         const unFormatedAmount = ethers.utils.parseEther(ether);
 
-        await ethereum.request({
+        await window.ethereum.request({
           method: "eth_sendTransaction",
           params: [
             {
@@ -369,8 +397,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
   //GET ALL THE TRANSACTION
   const getAllTransactions = async () => {
     try {
-      if (ethereum) {
-        const contract = await connectingTransferContract();
+      if (window.ethereum) {
+        const contract: any = await connectingTransferContract();
 
         const availableTransactions = await contract.getAllTransactions();
 
@@ -424,3 +452,5 @@ export const NFTMarketplaceProvider = ({ children }) => {
     </NFTMarketplaceContext.Provider>
   );
 };
+
+export { NFTMarketplaceContext };

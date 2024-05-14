@@ -24,8 +24,9 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "turquoise-obliged-centipede-803.mypinata.cloud",
+      "azure-known-gull-617.mypinata.cloud",
       "gateway.pinata.cloud",
+      "turquoise-obliged-centipede-803.mypinata.cloud",
     ],
   },
   async redirects() {

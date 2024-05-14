@@ -50,5 +50,16 @@
       "toc": true,
       "pagination": false
     }
+  },
+  "upload-course": {
+    "type": "",
+    "title": "",
+    "theme": {
+      "show": false,
+      "typesetting": "",
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
   }
 }
