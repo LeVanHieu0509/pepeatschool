@@ -1,4 +1,4 @@
-import { BRAND } from "@/types/brand";
+import { BRAND } from "../../types/brand";
 import Image from "next/image";
 import DropdownDefault from "../Dropdowns/DropdownDefault";
 
@@ -89,8 +89,7 @@ const TableFour: React.FC = () => {
                   ? ""
                   : "border-b border-stroke dark:border-strokedark"
               }`}
-              key={key}
-            >
+              key={key}>
               <div className="flex items-center gap-3 p-2.5 xl:p-5">
                 <div className="h-9 w-full max-w-9 flex-shrink-0">
                   <Image src={brand.logo} width={60} height={50} alt="Brand" />

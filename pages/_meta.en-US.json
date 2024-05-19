@@ -49,15 +49,6 @@
       "pagination": false
     }
   },
-  "upload-course": {
-    "display": "hidden",
-    "type": "page",
-    "title": " ",
-    "theme": {
-      "typesetting": "article",
-      "layout": "full"
-    }
-  },
   "manager": {
     "display": "hidden",
     "type": "page",

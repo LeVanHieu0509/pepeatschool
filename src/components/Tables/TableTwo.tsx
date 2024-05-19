@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Product } from "@/types/product";
+import { Product } from "../../types/product";
 
 const productData: Product[] = [
   {
@@ -66,8 +66,7 @@ const TableTwo = () => {
       {productData.map((product, key) => (
         <div
           className="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5"
-          key={key}
-        >
+          key={key}>
           <div className="col-span-3 flex items-center">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <div className="h-12.5 w-15 rounded-md">

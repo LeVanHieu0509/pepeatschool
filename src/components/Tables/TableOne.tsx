@@ -1,4 +1,4 @@
-import { BRAND } from "@/types/brand";
+import { BRAND } from "../../types/brand";
 import Image from "next/image";
 
 const brandData: BRAND[] = [
@@ -87,8 +87,7 @@ const TableOne = () => {
                 ? ""
                 : "border-b border-stroke dark:border-strokedark"
             }`}
-            key={key}
-          >
+            key={key}>
             <div className="flex items-center gap-3 p-2.5 xl:p-5">
               <div className="flex-shrink-0">
                 <Image src={brand.logo} alt="Brand" width={48} height={48} />

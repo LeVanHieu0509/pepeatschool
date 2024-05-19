@@ -1,7 +1,5 @@
-import React from "react";
-import { AdminCourseWrapper } from "./styled";
-import UpdateCourseScreen from "src/screens/update-course";
 import AdminScreen from "src/screens/admin";
+import { AdminCourseWrapper } from "./styled";
 
 interface AdminCourseProps {}
 

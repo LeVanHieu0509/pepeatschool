@@ -1,8 +1,8 @@
 "use client";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import ChartOne from "@/components/Charts/ChartOne";
-import ChartTwo from "@/components/Charts/ChartTwo";
-import ChartThree from "@/components/Charts/ChartThree";
+import Breadcrumb from "../Breadcrumbs/Breadcrumb";
+import ChartOne from "../Charts/ChartOne";
+import ChartTwo from "../Charts/ChartTwo";
+import ChartThree from "../Charts/ChartThree";
 import React from "react";
 
 const Chart: React.FC = () => {

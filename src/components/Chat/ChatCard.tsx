@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Chat } from "@/types/chat";
+import { Chat } from "../../types/chat";
 
 const chatData: Chat[] = [
   {
@@ -65,8 +65,7 @@ const ChatCard = () => {
           <Link
             href="/"
             className="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
-            key={key}
-          >
+            key={key}>
             <div className="relative h-14 w-14 rounded-full">
               <Image
                 width={56}
@@ -81,8 +80,7 @@ const ChatCard = () => {
               <span
                 className={`absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white ${
                   chat.dot === 6 ? "bg-meta-6" : `bg-meta-${chat.dot}`
-                } `}
-              ></span>
+                } `}></span>
             </div>
 
             <div className="flex flex-1 items-center justify-between">

@@ -1,18 +1,18 @@
 "use client";
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import CheckboxFive from "@/components/Checkboxes/CheckboxFive";
-import CheckboxFour from "@/components/Checkboxes/CheckboxFour";
-import CheckboxOne from "@/components/Checkboxes/CheckboxOne";
-import CheckboxThree from "@/components/Checkboxes/CheckboxThree";
-import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
-import SwitcherFour from "@/components/Switchers/SwitcherFour";
-import SwitcherOne from "@/components/Switchers/SwitcherOne";
-import SwitcherThree from "@/components/Switchers/SwitcherThree";
-import SwitcherTwo from "@/components/Switchers/SwitcherTwo";
-import DatePickerTwo from "@/components/FormElements/DatePicker/DatePickerTwo";
-import DatePickerOne from "@/components/FormElements/DatePicker/DatePickerOne";
-import MultiSelect from "@/components/FormElements/MultiSelect";
-import SelectGroupTwo from "@/components/SelectGroup/SelectGroupTwo";
+import Breadcrumb from "../Breadcrumbs/Breadcrumb";
+import CheckboxFive from "../Checkboxes/CheckboxFive";
+import CheckboxFour from "../Checkboxes/CheckboxFour";
+import CheckboxOne from "../Checkboxes/CheckboxOne";
+import CheckboxThree from "../Checkboxes/CheckboxThree";
+import CheckboxTwo from "../Checkboxes/CheckboxTwo";
+import SwitcherFour from "../Switchers/SwitcherFour";
+import SwitcherOne from "../Switchers/SwitcherOne";
+import SwitcherThree from "../Switchers/SwitcherThree";
+import SwitcherTwo from "../Switchers/SwitcherTwo";
+import DatePickerTwo from "../FormElements/DatePicker/DatePickerTwo";
+import DatePickerOne from "../FormElements/DatePicker/DatePickerOne";
+import MultiSelect from "../FormElements/MultiSelect";
+import SelectGroupTwo from "../SelectGroup/SelectGroupTwo";
 
 const FormElements = () => {
   return (
@@ -140,8 +140,7 @@ const FormElements = () => {
                 <textarea
                   rows={6}
                   placeholder="Default textarea"
-                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
-                ></textarea>
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
               </div>
 
               <div>
@@ -151,8 +150,7 @@ const FormElements = () => {
                 <textarea
                   rows={6}
                   placeholder="Active textarea"
-                  className="w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white"
-                ></textarea>
+                  className="w-full rounded-lg border-[1.5px] border-primary bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-form-input dark:text-white"></textarea>
               </div>
 
               <div>
@@ -163,8 +161,7 @@ const FormElements = () => {
                   rows={6}
                   disabled
                   placeholder="Disabled textarea"
-                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary dark:disabled:bg-black"
-                ></textarea>
+                  className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary dark:disabled:bg-black"></textarea>
               </div>
             </div>
           </div>
