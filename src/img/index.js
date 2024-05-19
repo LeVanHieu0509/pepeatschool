@@ -57,6 +57,7 @@ import loader from "./loadergif.gif";
 import errorgif from "./error.gif";
 import transfer from "./transfer.gif";
 import transferImage from "./ethereTransfer.gif";
+import loader2 from "./pepe-solution-img.png";
 
 export default {
   transferImage,
@@ -118,4 +119,5 @@ export default {
   loader,
   errorgif,
   transfer,
+  loader2,
 };
