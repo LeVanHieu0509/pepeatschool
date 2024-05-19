@@ -20,6 +20,8 @@ const AppContext = createContext<{
   open?: any;
   setOpen?: any;
   transferTokenUnlock?: any;
+  setTapAdmin?: any;
+  tapAdmin?: any;
 }>({});
 
 const addToken = [];
@@ -32,6 +34,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [networkConnect, setNetworkConnect] = useState("");
   const [reLoading, setReloading] = useState(false);
   const [open, setOpen] = useState<any>();
+  const [tapAdmin, setTapAdmin] = useState("OVERVIEW");
 
   const fetchingData = async () => {
     try {
@@ -138,6 +141,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   return (
     <AppContext.Provider
       value={{
+        setTapAdmin,
+        tapAdmin,
         transferTokenUnlock,
         reLoading,
         setReloading,

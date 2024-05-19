@@ -1313,7 +1313,9 @@ const config: DocsThemeConfig = {
           <p className="text-base pb-2 text-black font-bold">Tài nguyên</p>
           <ul className="flex flex-col gap-2">
             <li>
-              <a href="https://drive.google.com/drive/folders/1tuaa2ClldLZ7T-XtbgNTz0R43qnR788F?usp=sharing" className="text-sm">
+              <a
+                href="https://drive.google.com/drive/folders/1tuaa2ClldLZ7T-XtbgNTz0R43qnR788F?usp=sharing"
+                className="text-sm">
                 PAS whitepaper
               </a>
             </li>
@@ -1323,24 +1325,33 @@ const config: DocsThemeConfig = {
         <div>
           <p className="text-base pb-2 text-black font-bold">Mạng xã hội</p>
           <ul className="flex flex-col gap-2">
-            <li>          
-              <a style={{marginLeft:'-10px'}} className="flex " href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
-              <img  src="https://mspoweruser.com/wp-content/uploads/2022/03/Telegram-Logo.png" alt="telegram" 
-              width={"40"}
-              height={"30"}
-              />
-              <p className="">Telegram</p>
+            <li>
+              <a
+                style={{ marginLeft: "-10px" }}
+                className="flex "
+                href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
+                <img
+                  src="https://mspoweruser.com/wp-content/uploads/2022/03/Telegram-Logo.png"
+                  alt="telegram"
+                  width={"40"}
+                  height={"30"}
+                />
+                <p className="">Telegram</p>
               </a>
             </li>
             <li>
-            <a style={{marginLeft:'-10px'}} className="flex " href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
-              <img  src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-Log%D0%BE.png" alt="X" 
-              width={"40"}
-              height={"30"}
-              />
-              <p  className="">Twitter</p>
+              <a
+                style={{ marginLeft: "-10px" }}
+                className="flex "
+                href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
+                <img
+                  src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-Log%D0%BE.png"
+                  alt="X"
+                  width={"40"}
+                  height={"30"}
+                />
+                <p className="">Twitter</p>
               </a>
-          
             </li>
           </ul>
         </div>

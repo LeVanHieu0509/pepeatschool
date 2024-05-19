@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { LightTheme } from "styles/theme";
 import { AdminLayoutWrapper } from "./styled";
 import { Alert } from "@components/alert";
+import { useConfig } from "nextra-theme-docs";
 
 interface ThemeWrapperProps {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ interface ThemeWrapperProps {
 const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
   const router = useRouter();
   const [unLock, setUnlock] = useState(false);
+  const config = useConfig();
   const {
     account,
     ether,
@@ -71,6 +73,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     }
   }, [router.pathname]);
 
+  console.log({ config });
   return (
     <ThemeProvider theme={LightTheme}>
       {children}

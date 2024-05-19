@@ -36,9 +36,7 @@
     "title": "Khoá học",
     "theme": {
       "typesetting": "article",
-      "sidebar": true,
-      "toc": true,
-      "pagination": false
+      "layout": "full"
     }
   },
   "trade": {
@@ -52,11 +50,21 @@
     }
   },
   "upload-course": {
-    "type": "",
-    "title": "",
+    "display": "hidden",
+    "type": "page",
+    "title": " ",
     "theme": {
-      "show": false,
-      "typesetting": "",
+      "typesetting": "article",
+      "layout": "full"
+    }
+  },
+  "manager": {
+    "display": "hidden",
+    "type": "page",
+    "title": " ",
+    "theme": {
+      "typesetting": "article",
+      "layout": "full",
       "sidebar": false,
       "toc": false,
       "pagination": false
