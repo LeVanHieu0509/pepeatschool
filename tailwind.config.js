@@ -7,10 +7,10 @@ module.exports = withMT({
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./theme.config.tsx",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/plugins/chat-gpt/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/plugins/chat-gpt/pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     fontFamily: {

@@ -178,9 +178,11 @@ export const liemDevCss = css`
   .answer_ai_box {
     width: 100%;
     background-color: white;
-    height: 300px;
+    height: 400px;
     border-radius: 30px;
     margin-bottom: 20px;
+
+    overflow: auto;
   }
   .btn-ask-ai {
     position: absolute;

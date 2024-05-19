@@ -27,7 +27,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "middleware.js"
+    "middleware.js",
+    "src/plugins/chat-gpt/bot/axios-instant.js"
   ],
   "exclude": ["node_modules"]
 }

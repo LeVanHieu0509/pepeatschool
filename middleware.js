@@ -1,11 +1,17 @@
-import { locales } from 'nextra/locales';
+import { locales } from "nextra/locales";
+import { parse, stringifyUrl } from "query-string";
 
 export const middleware = (request) => {
   const { nextUrl } = request;
+  const pathName = request.nextUrl.pathname;
 
-  // The middleware must not handle dynamic routes.
-  // if (nextUrl.pathname.startsWith('/ai')) {
-  //   return;
+  // if (pathName.startsWith("/api")) {
+  //   const redirect = stringifyUrl({
+  //     url: `${process.env.API_ENDPOINT}${pathName.replace(/^\/api/, "")}`,
+  //     query: parse(req.nextUrl.search?.replace("?", "")),
+  //   });
+
+  //   return res.rewrite(redirect);
   // }
 
   return locales(request);
