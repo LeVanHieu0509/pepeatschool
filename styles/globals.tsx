@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
+import { liemDevCss } from "./liem-dev";
 
 function renderSpace(type: "margin" | "padding", prefix = "") {
   return [0, 2, 6, 8, 10, 12, 16, 20, 24, 30, 36, 40, 60]
@@ -785,4 +786,5 @@ const style = css`
 
 export const GlobalStyle = createGlobalStyle`
   ${style}
+  ${liemDevCss}
 `;

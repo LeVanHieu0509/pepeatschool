@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import { css } from "styled-components";
 
-export const CourseScreenWrapper = styled.div`
+export const liemDevCss = css`
+  /// OVERVIEW
   .Main {
     font-family: "Montserrat", sans-serif;
   }
@@ -205,11 +206,5 @@ export const CourseScreenWrapper = styled.div`
     height: 25px;
     margin-left: 10px;
     padding-bottom: -40px;
-  }
-`;
-
-export const UL = styled.ul`
-  li {
-    font-size: 50px;
   }
 `;

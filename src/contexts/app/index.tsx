@@ -22,7 +22,9 @@ const AppContext = createContext<{
   transferTokenUnlock?: any;
   setTapAdmin?: any;
   tapAdmin?: any;
-}>({});
+}>({
+  tapAdmin: "OVERVIEW",
+});
 
 const addToken = [];
 
