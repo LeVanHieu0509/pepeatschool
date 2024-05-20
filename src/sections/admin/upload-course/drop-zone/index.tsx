@@ -27,25 +27,12 @@ const DropZone = ({ name, code, uploadToIPFS, setImage }) => {
     <div className={Style.DropZone}>
       <div className={Style.DropZone_box} {...getRootProps()}>
         <div className="flex items-center justify-center w-full">
-          <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
-            <div className="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-10 h-10 text-blue-400 group-hover:text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                />
-              </svg>
-              <div className="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
+          <label className="flex flex-col rounded-lg border-4 border-dashed w-full p-4 group text-center">
+            <div className="w-full text-center flex flex-col items-center justify-center items-center  ">
+              <div className="flex flex-auto  mx-auto -mt-10">
                 <img
-                  className="has-mask h-36 object-center"
-                  src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                  className="has-mask h-42 object-center"
+                  src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=200&ext=jpg"
                   alt="freepik image"
                 />
               </div>

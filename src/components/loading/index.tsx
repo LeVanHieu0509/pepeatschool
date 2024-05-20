@@ -1,9 +1,11 @@
-import { Spinner } from "@material-tailwind/react";
+import PulseLoader from "./pulse-loader";
 import { LoadingWrapper } from "./styled";
 
 interface LoadingFixedProps {
-  loading?: boolean;
+  loading: boolean;
   color?: string;
+  top?: number;
+  isOverlap?: boolean;
   isFullContent?: boolean;
 }
 
@@ -11,16 +13,15 @@ const LoadingSection = ({
   loading = true,
   color,
   isFullContent = false,
+  isOverlap = false,
+  top = 0,
 }: LoadingFixedProps) => {
   return loading ? (
-    <LoadingWrapper isFullContent={isFullContent}>
-      {loading && (
-        <Spinner
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-          className="h-4 w-4"
-        />
-      )}
+    <LoadingWrapper
+      isFullContent={isFullContent}
+      isOverlap={isOverlap}
+      top={top}>
+      <PulseLoader loading color={color} />
     </LoadingWrapper>
   ) : null;
 };

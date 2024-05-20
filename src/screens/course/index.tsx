@@ -1,13 +1,26 @@
-import React, { useContext, useEffect, useState } from "react";
-import { CourseScreenWrapper } from "./styled";
-import HeaderCourse from "src/sections/course/header";
+import { Alert } from "@components/alert";
+import ModalCustom from "@components/modal-custom";
+import { useContext, useEffect, useState } from "react";
+import { ShowModal } from "src/@custom-types";
+import { NFTCard } from "src/components/componentsindex";
+import LoadingSection from "src/components/loading";
 import { NFTMarketplaceContext } from "src/contexts/NFT/NFTMarketplaceContext";
-import { Loader, NFTCard } from "src/components/componentsindex";
-import { Table } from "nextra/components";
+import AppContext from "src/contexts/app";
+import HeaderCourse from "src/sections/course/header";
+import { Flex } from "styles/common";
+import { CourseScreenWrapper } from "./styled";
 
 interface CourseScreenProps {}
 
 const CourseScreen = ({}: CourseScreenProps) => {
+  const [unLock, setUnlock] = useState(false);
+  const [showModal, setShowModal] = useState<ShowModal>({
+    type: null,
+    show: false,
+    data: null,
+    title: "Thông báo",
+  });
+  const { transferTokenUnlock, loading, setLoading } = useContext(AppContext);
   const { checkIfWalletConnected, currentAccount } = useContext(
     NFTMarketplaceContext
   );
@@ -28,53 +41,85 @@ const CourseScreen = ({}: CourseScreenProps) => {
     }
   }, [currentAccount]);
 
+  const handleUnlockCourse = (data) => {
+    setShowModal({
+      show: true,
+      data: data,
+    });
+  };
+
   return (
     <CourseScreenWrapper>
       <HeaderCourse />
-      {/* {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}*/}
-      {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}
-      <div className="Main">
-        <div className="NFT-course-market-section">
-          <div className="nft-row">
-            <div className="nft-course-item course-item-1">
-              <img
-                src="https://einvoice.vn/FileUpload/ArticleMaterials/images/tc%20dn%20li%c3%aan%20quan%20trtiep%20%c4%91%e1%ba%bfn%20t%c3%acnh%20h%c3%acnh%20kdoanh.png"
-                className="nft-course-item-img"></img>
-              <div className="nft-course-name bold bg-text text-white">
-                Tài chính doanh nghiệp
-              </div>
-              <div className="purchase-part">
-                <div className="nft-course-price sm-text bold text-white">
-                  10000 PEPEAS
-                </div>
-                <div className="btn-unlock-NFT bold sm-text">Mở khóa</div>
-              </div>
-              <div className="code-course-container text-white">
-                <div className="code-title bold">Code</div>
-                <div className="code"></div>
-              </div>
-            </div>
-            <div className="nft-course-item course-item-1">
-              <img
-                src="https://einvoice.vn/FileUpload/ArticleMaterials/images/tc%20dn%20li%c3%aan%20quan%20trtiep%20%c4%91%e1%ba%bfn%20t%c3%acnh%20h%c3%acnh%20kdoanh.png"
-                className="nft-course-item-img"></img>
-              <div className="nft-course-name bold bg-text text-white">
-                Tài chính doanh nghiệp
-              </div>
-              <div className="purchase-part">
-                <div className="nft-course-price sm-text bold text-white">
-                  10000 PEPEAS
-                </div>
-                <div className="btn-unlock-NFT bold sm-text">Mở khóa</div>
-              </div>
-              <div className="code-course-container text-white">
-                <div className="code-title bold">Code</div>
-                <div className="code"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      {nfts.length == 0 ? (
+        <Flex className="mt-4">
+          <LoadingSection color="green" loading={true} />
+        </Flex>
+      ) : (
+        <NFTCard NFTData={nfts} onClick={handleUnlockCourse} />
+      )}
+
+      {showModal.show && currentAccount && !unLock ? (
+        <ModalCustom
+          show={true}
+          onCloseModal={() => {
+            setShowModal({
+              show: false,
+            });
+            setUnlock(false);
+          }}
+          title="Thông báo"
+          primaryBtn={{
+            loading: loading,
+            text: "Mở khoá",
+            onClick: async () => {
+              setLoading(true);
+              const result = await transferTokenUnlock();
+
+              if (result) {
+                setUnlock(true);
+                setLoading(false);
+              } else {
+                Alert(
+                  "WARNING",
+                  "Bạn không đủ token PEPE AT SCHOOL để mở khoá Khoá học."
+                );
+                setUnlock(false);
+                setLoading(false);
+                setShowModal({
+                  show: false,
+                });
+                return;
+              }
+            },
+          }}
+          secondaryBtn={{
+            text: "Bỏ qua",
+            onClick: () => {
+              setShowModal({
+                show: false,
+              });
+              setUnlock(false);
+            },
+          }}>
+          Bạn cần dùng 1000 PEPEATSCHOOL để mở khoá Khoá học?
+        </ModalCustom>
+      ) : null}
+
+      {unLock ? (
+        <ModalCustom
+          show={unLock}
+          onCloseModal={() => {
+            setUnlock(false);
+            setShowModal({
+              show: false,
+            });
+          }}
+          title="Thông báo mở khoá">
+          Mã khoá học của bạn: {showModal?.data?.description}
+        </ModalCustom>
+      ) : null}
     </CourseScreenWrapper>
   );
 };

@@ -45,39 +45,20 @@ const FormUploadCourseScreen = ({
           value={code}
         />
       </FlexColumn>
-
-      <Flex justify="center" className="w-100">
+      {error ? <p>{error}</p> : null}
+      <Flex justify="center" gap={16} className="w-100 mt-8">
         <Button
+          style={{
+            color: "white",
+            background: "green",
+          }}
           size="sm"
           disabled={false}
           onClick={async () => createNFT(name, "0.000015", image, code)}
-          style={{
-            color: "#ffffff",
-          }}
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}>
           Upload khoá học
-        </Button>
-
-        {error ? <p>{error}</p> : null}
-
-        <Button
-          size="sm"
-          disabled={false}
-          onClick={async () =>
-            await createSale(
-              "https://gateway.pinata.cloud/ipfs/QmQzPojPZWbmUCvN3Q6GSoH6MVc1Yv1rHLedt8mQd97fQ6",
-              "0.015"
-            )
-          }
-          style={{
-            color: "#ffffff",
-          }}
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}>
-          Upload NFT
         </Button>
       </Flex>
     </FormUploadCourseScreenWrapper>

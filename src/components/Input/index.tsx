@@ -8,7 +8,7 @@ interface InputProps {
 
 const InputCustom = ({ label, value, onChange }: InputProps) => {
   return (
-    <div className="grid grid-cols-1 space-y-2">
+    <div className="grid grid-cols-1 space-y-2 w-100">
       <label className="text-sm font-bold text-black-500 tracking-wide">
         {label}
       </label>

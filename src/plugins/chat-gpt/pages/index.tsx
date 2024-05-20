@@ -13,7 +13,9 @@ export default function PepeChat() {
   };
 
   return (
-    <main className="overflow-hidden w-full h-screen relative flex ">
+    <main
+      style={{ overflow: "hidden" }}
+      className="overflow-hidden w-full h-screen relative flex ">
       <Chat toggleComponentVisibility={toggleComponentVisibility} />
     </main>
   );

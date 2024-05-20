@@ -73,7 +73,6 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     }
   }, [router.pathname]);
 
-  console.log({ config });
   return (
     <ThemeProvider theme={LightTheme}>
       {children}

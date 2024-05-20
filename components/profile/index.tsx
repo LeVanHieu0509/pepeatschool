@@ -1,4 +1,5 @@
 import useClickAway from "hooks/use-click-away";
+import Link from "next/link";
 import React, { useContext, useRef } from "react";
 import AppContext from "src/contexts/app";
 import { disconnectWallet } from "src/contracts";
@@ -57,11 +58,15 @@ const Profile = ({}: ProfileProps) => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2 px-2" onClick={handleLogoutWallet}>
-              {/* <button className="flex-1 rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
-            Follow
-          </button> */}
-              <button className="transition-all hover:bg-green-200 flex-1 rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
+            <div className="flex gap-2 px-2">
+              <Link href="/manager">
+                <button className="flex-1 rounded-full bg-blue-600 dark:bg-blue-800 text-white dark:text-white antialiased font-bold hover:bg-blue-800 dark:hover:bg-blue-900 px-4 py-2">
+                  CMS
+                </button>
+              </Link>
+              <button
+                onClick={handleLogoutWallet}
+                className="transition-all hover:bg-green-200 flex-1 rounded-full border-2 border-gray-400 dark:border-gray-700 font-semibold text-black dark:text-white px-4 py-2">
                 Logout
               </button>
             </div>

@@ -147,13 +147,13 @@ export const NFTMarketplaceProvider = ({ children }) => {
     const data = JSON.stringify({
       pinataContent: {
         name: name,
-        code: code,
+        description: code,
         external_url: "https://pinata.cloud",
         image: IpfsHash,
       },
       pinataMetadata: {
         name: name,
-        code: code,
+        description: code,
       },
     });
 
@@ -256,7 +256,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     if (currentAccount) {
       fetchNFTs();
     }
-  }, []);
+  }, [currentAccount]);
 
   //--FETCHING MY NFT OR LISTED NFTs
   const fetchMyNFTsOrListedNFTs = async (type?: any) => {
