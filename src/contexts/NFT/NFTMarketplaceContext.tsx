@@ -195,6 +195,8 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
         console.log({ transaction });
         await transaction.wait();
+
+        router.push("/course");
       } catch (error) {
         setError("error while creating sale" + error.data.message);
         setOpenError(true);

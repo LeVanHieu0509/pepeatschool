@@ -1,6 +1,7 @@
 import { SiOpenai } from "react-icons/si";
 import { HiUser } from "react-icons/hi";
 import { TbCursorText } from "react-icons/tb";
+import Image from "next/image";
 
 const Message = (props: any) => {
   const { message } = props;
@@ -16,11 +17,13 @@ const Message = (props: any) => {
       <div className="">
         <div className="flex flex-row gap-2 md:gap-2 md:max-w-2xl xl:max-w-3xl p-1 md:py-1 lg:px-0 ml-4 mt-2 w-full">
           <div className="w-8 flex flex-col relative items-end">
-            <div className="relative h-7 w-7 p-0 rounded-sm text-white flex items-center justify-center bg-black/75 text-opacity-100r">
+            <div className="relative h-7 w-7 p-0 rounded-sm text-white flex items-center justify-center  text-opacity-100r">
               {isUser ? (
-                <HiUser className="h-4 w-4 text-white" />
+                <div className="relative h-7 w-7 p-0 rounded-sm text-white flex items-center justify-center bg-black/75 text-opacity-100r">
+                  <HiUser className="h-4 w-4 text-white " />
+                </div>
               ) : (
-                <SiOpenai className="h-4 w-4 text-white" />
+                <img alt="123" src={`/pepe/hi.png`}></img>
               )}
             </div>
             <div className="text-xs flex items-center justify-center gap-1 absolute left-0 top-2 -ml-4 -translate-x-full group-hover:visible !invisible">

@@ -23,6 +23,7 @@ const FormUploadCourseScreen = ({
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   return (
     <FormUploadCourseScreenWrapper>
@@ -54,7 +55,10 @@ const FormUploadCourseScreen = ({
           }}
           size="sm"
           disabled={false}
-          onClick={async () => createNFT(name, "0.000015", image, code)}
+          onClick={async () => {
+            setLoading(true);
+            createNFT(name, "0.15", image, code);
+          }}
           placeholder={undefined}
           onPointerEnterCapture={undefined}
           onPointerLeaveCapture={undefined}>
