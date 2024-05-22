@@ -1,3 +1,13 @@
+.Main{
+  
+}
+.NFT_section{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-radius: 0.25rem;
+
+}
+
 .NFTCard {
   width: 100%;
   margin: 0 auto;
@@ -5,28 +15,93 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
   margin-bottom: 10rem;
+  cursor: pointer;
 }
-
+.NFTCard_img{
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
 .NFTCard_box {
-  background-color:red;
-  padding: 1rem;
-  border-radius: 1rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  background-color:#fff;
+  border-radius: 18px;
+  overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease-in;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 340px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; 
+  font-family: "Montserrat",sans-serif;
+}
+.NFTCard_box:hover .last_sale{
+  display: none;
+
+}
+.NFTCard_box:hover .NFT_purchase_section{
+  transform: translateY(-45px);
+}
+.NFTCard_img:hover{
+  transform: scale(1.2);
+}
+.NFT_course_info{
+  padding: 10px;
+  font-size: 14px;
+  
+}
+.NFT_course_name{
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.NFT_course_price{
+  font-weight: 500;
+}
+.last_sale{
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+  margin-top: -5px;
+  color: #008000;
+}
+.last_sale_price{
+
 }
 
-.NFTCard_box:hover {
-  box-shadow: var(--box-shadow-2);
+.NFT_purchase_section{
+  background-color: #008000;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  position: relative;
+  bottom: -45px;
+  transition: transform 0.3s ease-out;
+  
 }
+.NFT_unlock_btn{
+  width: 83%;
+  text-align: center;
+  margin-left: 10px;
+  line-height: 40px;
+  font-weight: 600;
+  border-right: #fff 1px solid;
 
-.NFTCard_box:hover .NFTCard_box_img_img {
-  transform: scale(1.05);
-  border-radius: 1rem;
 }
+.NFT_unlock_btn_img{
+  display: flex;
+  width: 17%;
+  justify-content: center;
+  align-items: center;
 
+}
+.NFT_unlock_img{
+  height: 25px;
+  margin-top: -5px;
+}
 .NFTCard_box_update {
   grid-column: 1 /-1;
   grid-row: 1 /-2;
@@ -80,7 +155,7 @@
   grid-column: 1 / -1;
   grid-row: 1 / end;
   overflow: hidden;
-  border-radius: 1rem;
+  
 }
 
 .NFTCard_box_img_img {
@@ -166,9 +241,11 @@
 
 @media screen and (min-device-width: 427px) and (max-device-width: 768px) {
   .NFTCard {
-    width: 90%;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
+ 
+  
 
   .NFTCard_box_update_right {
     padding: 0.5rem 2rem;
@@ -177,10 +254,32 @@
   .NFTCard_box_update_right_info p {
     font-size: 1rem;
   }
+  .NFTCard_img{
+    height: 185px;
+  }
+  .NFT_unlock_btn_img{
+    width: 0%;
+  }
+  .NFT_unlock_btn{
+    border:none;
+    width: 100%;
+  }
+  .last_sale{
+    font-size: 15px;
+  }
+  .NFT_purchase_section{
+    bottom: -80px;
+  }
+ 
+  
 }
 
 @media screen and (min-device-width: 770px) and (max-device-width: 1024px) {
   .NFTCard {
     grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+  }
+  .NFT_course_name {
+    font-size: 14px;
   }
 }

@@ -34,7 +34,6 @@ const NFTCard = ({ NFTData }) => {
   // console.log(NFTData);
   return (
     <div>
-      {" "}
       <div className={Style.NFTCard}>
         {NFTData.map((el, i) => (
           <div className="bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-teal-400">
@@ -62,7 +61,7 @@ const NFTCard = ({ NFTData }) => {
                           className={Style.NFTCard_box_update_left_like_icon}
                         />
                       )}
-                      {""} 22
+                      {""} 25
                     </div>
                   </div>
 
