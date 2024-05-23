@@ -20,8 +20,7 @@ const NFTCard = ({ NFTData, onClick }) => {
   };
 
   return (
-    <div className="mt-24">
-      {" "}
+    <div>
       <div className={Style.NFTCard}>
         {NFTData.map((el, i) => (
           <div
@@ -37,10 +36,21 @@ const NFTCard = ({ NFTData, onClick }) => {
                   className={Style.NFTCard_box_img_img}
                 />
               </div>
-
-              <div className={Style.NFTCard_box_update}>
-                <div className={Style.NFTCard_box_update_left}></div>
-              </div>
+                <div className={Style.NFTCard_box_update}>
+                  <div className={Style.NFTCard_box_update_left}>
+                    <div
+                      className={Style.NFTCard_box_update_left_like}
+                      onClick={() => likeNft()}>
+                      {like ? (
+                        <AiOutlineHeart />
+                      ) : (
+                        <AiFillHeart
+                          className={Style.NFTCard_box_update_left_like_icon}
+                        />
+                      )}
+                      {""} 25
+                    </div>
+                  </div>
 
               <div className={Style.NFTCard_box_update_details}>
                 <div className={Style.NFTCard_box_update_details_price}>

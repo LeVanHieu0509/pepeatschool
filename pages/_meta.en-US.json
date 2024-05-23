@@ -36,12 +36,15 @@
     "title": "Khoá học",
     "theme": {
       "typesetting": "article",
-      "layout": "full"
+      "sidebar": true,
+      "toc": true,
+      "layout":"full",
+      "pagination": false
     }
   },
   "trade": {
     "type": "page",
-    "title": "Trade",
+    "title": "Phân tích",
     "theme": {
       "typesetting": "article",
       "sidebar": true,

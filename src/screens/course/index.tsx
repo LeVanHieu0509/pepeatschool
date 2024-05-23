@@ -2,7 +2,7 @@ import { Alert } from "@components/alert";
 import ModalCustom from "@components/modal-custom";
 import { useContext, useEffect, useState } from "react";
 import { ShowModal } from "src/@custom-types";
-import { NFTCard } from "src/components/componentsindex";
+import { NFTCard, NFTCard2 } from "src/components/componentsindex";
 import LoadingSection from "src/components/loading";
 import { NFTMarketplaceContext } from "src/contexts/NFT/NFTMarketplaceContext";
 import AppContext from "src/contexts/app";
@@ -51,6 +51,10 @@ const CourseScreen = ({}: CourseScreenProps) => {
   return (
     <CourseScreenWrapper>
       <HeaderCourse />
+    {/* {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}*/}
+    {nfts.length == 0 ? <Loader /> : <NFTCard2 NFTData={nfts} />}
+    
+   
 
       {nfts.length == 0 ? (
         <Flex className="mt-4">
