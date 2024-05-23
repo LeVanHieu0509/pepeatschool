@@ -11,6 +11,7 @@ import {
 import { useTheme } from "styled-components";
 import { Flex } from "styles/common";
 import { DialogWrapper } from "./styled";
+import LoadingSection from "src/components/loading";
 
 const ModalCustom = ({
   children,
@@ -35,6 +36,7 @@ const ModalCustom = ({
     onClick?: () => void;
   };
   primaryBtn?: {
+    loading?: any;
     disable?: any;
     text?: string;
     onClick?: () => void;
@@ -131,7 +133,13 @@ const ModalCustom = ({
                     background: theme.color.status.primary,
                   }}
                   onClick={primaryBtn?.onClick as any}>
-                  {primaryBtn?.text}
+                  {primaryBtn?.loading ? (
+                    <Flex>
+                      <LoadingSection loading={true} color="green" />
+                    </Flex>
+                  ) : (
+                    primaryBtn?.text
+                  )}
                 </Button>
               ) : null}
             </Flex>

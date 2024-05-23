@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from "styled-components";
-import { device } from "./media";
+import { liemDevCss } from "./liem-dev";
+import { customCss } from "./custom";
 
 function renderSpace(type: "margin" | "padding", prefix = "") {
   return [0, 2, 6, 8, 10, 12, 16, 20, 24, 30, 36, 40, 60]
@@ -754,11 +755,11 @@ const style = css`
     height: 40px;
     width: 40px;
   }
-  .cir-plus{
+  .cir-plus {
     height: 80px;
     width: 80px;
   }
-  .cir-plus:hover{
+  .cir-plus:hover {
     transition: ease-out 0.2s;
     border: 4px solid rgba(19, 231, 12, 0.2);
     -webkit-transition: ease-out 0.2s;
@@ -775,9 +776,17 @@ const style = css`
   a.circle {
     color: transparent;
   } /* IE fix: removes blue border */
+  article {
+    padding-left: max(env(safe-area-inset-right), 0rem) !important;
+    padding-right: max(env(safe-area-inset-right), 0rem) !important;
+  }
+  .nx-max-w-90rem {
+    max-width: 100rem !important;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`
   ${style}
-
+  ${liemDevCss}
+  ${customCss}
 `;

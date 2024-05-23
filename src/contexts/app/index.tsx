@@ -20,7 +20,11 @@ const AppContext = createContext<{
   open?: any;
   setOpen?: any;
   transferTokenUnlock?: any;
-}>({});
+  setTapAdmin?: any;
+  tapAdmin?: any;
+}>({
+  tapAdmin: "OVERVIEW",
+});
 
 const addToken = [];
 
@@ -32,6 +36,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [networkConnect, setNetworkConnect] = useState("");
   const [reLoading, setReloading] = useState(false);
   const [open, setOpen] = useState<any>();
+  const [tapAdmin, setTapAdmin] = useState("OVERVIEW");
 
   const fetchingData = async () => {
     try {
@@ -138,6 +143,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   return (
     <AppContext.Provider
       value={{
+        setTapAdmin,
+        tapAdmin,
         transferTokenUnlock,
         reLoading,
         setReloading,
@@ -159,44 +166,3 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 };
 
 export default AppContext;
-
-const failed = {
-  result: {
-    hash: "0x000182df0fa7c19301051db449a7200524bb31456692fed4a38c48839b0c5f13",
-    type: 2,
-    accessList: null,
-    blockHash: null,
-    blockNumber: null,
-    transactionIndex: null,
-    confirmations: 0,
-    from: "0xa921747A4a9241299336119d24ED894B76fc73Cc",
-    gasPrice: {
-      type: "BigNumber",
-      hex: "0x012a05f200",
-    },
-    maxPriorityFeePerGas: {
-      type: "BigNumber",
-      hex: "0x012a05f200",
-    },
-    maxFeePerGas: {
-      type: "BigNumber",
-      hex: "0x012a05f200",
-    },
-    gasLimit: {
-      type: "BigNumber",
-      hex: "0x0493e0",
-    },
-    to: "0x41c3fc84F65308a29Cd3Da2AB7F5584F4A978e8b",
-    value: {
-      type: "BigNumber",
-      hex: "0x00",
-    },
-    nonce: 0,
-    data: "0xa9059cbb000000000000000000000000f39fd6e51aad88f6f4ce6ab8827279cfffb922660000000000000000000000000000000000000000000000056bc75e2d63100000",
-    r: "0x5e90bd5a442a2e5765be0ed504f85116cb6fb1a90af43a5ea3438b30122fadf8",
-    s: "0x58000fd538411803fd4b2467051b26bf5837060b3a40cc4e8ec68badd99f5124",
-    v: 1,
-    creates: null,
-    chainId: 0,
-  },
-};

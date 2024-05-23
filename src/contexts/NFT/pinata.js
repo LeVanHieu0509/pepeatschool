@@ -1,12 +1,10 @@
 import FormData from "form-data";
 require("dotenv").config();
 
-require("dotenv").config();
-
 const axios = require("axios");
 
 const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiI2ODBhOTM5MC1iOGZkLTQ3NjAtYmI5OC0yOGMyZGQ5YjkxMWMiLCJlbWFpbCI6ImxldmFuaGlldTJrMS5kekBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJpZCI6IkZSQTEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX0seyJpZCI6Ik5ZQzEiLCJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MX1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiMWJmMzBlM2VmYjM5YmJkMDUwOTIiLCJzY29wZWRLZXlTZWNyZXQiOiIyYzAwODliZmVlZjEzNzIxYjg3YjA0MDAwYjk5MzY0NzUzZjBkNjVhZjQ3MmM5YzQyMzZlZGRlYTVlZmM1OGRiIiwiaWF0IjoxNzAyMjE3MzU4fQ.T9Auo62-lau8KJgrAF_LB3Qw2UUbpPwgutHaH-JuHkE";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiYTEyYTA1My00YzAyLTQ4MzMtYWEwMC0wYzEzYzI4MzljYzIiLCJlbWFpbCI6ImxldmFuaGlldS53b3Jrc3BhY2VAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6IjhkOTdkOGUyZWJlOWRiZjRhYTYyIiwic2NvcGVkS2V5U2VjcmV0IjoiMzhmNDZkZDVhY2JlYzY2MTIwYzdkZDkzZjM5M2U3NGIyNTJiYjEzMDczNWYzZTM1NjBhNTdhOTNjZWRlY2RjMyIsImlhdCI6MTcxNTY2MTQzOH0.8OeBCPGQS-KAy5gbbHbIIIQU6Gr03nQmZmDBBkzfGlU";
 export const pinFileToIPFS = async (file, data) => {
   const formData = new FormData();
 
@@ -82,7 +80,7 @@ const mintNft = async (CID, wallet) => {
   try {
     const data = JSON.stringify({
       recipient: `polygon:${wallet}`,
-      metadata: `https://turquoise-obliged-centipede-803.mypinata.cloud.cloud/ipfs/${CID}`,
+      metadata: `https://azure-known-gull-617.mypinata.cloud.cloud/ipfs/${CID}`,
     });
     const res = await axios(
       "https://staging.crossmint.com/api/2022-06-09/collections/default/nfts",

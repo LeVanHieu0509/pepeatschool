@@ -51,5 +51,17 @@
       "toc": true,
       "pagination": false
     }
+  },
+  "manager": {
+    "display": "hidden",
+    "type": "page",
+    "title": " ",
+    "theme": {
+      "typesetting": "article",
+      "layout": "full",
+      "sidebar": false,
+      "toc": false,
+      "pagination": false
+    }
   }
 }
