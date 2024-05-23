@@ -2,7 +2,7 @@ import { Alert } from "@components/alert";
 import ModalCustom from "@components/modal-custom";
 import { useContext, useEffect, useState } from "react";
 import { ShowModal } from "src/@custom-types";
-import { NFTCard, NFTCard2 } from "src/components/componentsindex";
+import { NFTCard2 } from "src/components/componentsindex";
 import LoadingSection from "src/components/loading";
 import { NFTMarketplaceContext } from "src/contexts/NFT/NFTMarketplaceContext";
 import AppContext from "src/contexts/app";
@@ -51,18 +51,16 @@ const CourseScreen = ({}: CourseScreenProps) => {
   return (
     <CourseScreenWrapper>
       <HeaderCourse />
-    {/* {nfts.length == 0 ? <Loader /> : <NFTCard NFTData={nfts} />}*/}
-    {nfts.length == 0 ? <Loader /> : <NFTCard2 NFTData={nfts} />}
-    
-   
 
-      {nfts.length == 0 ? (
-        <Flex className="mt-4">
-          <LoadingSection color="green" loading={true} />
-        </Flex>
-      ) : (
-        <NFTCard NFTData={nfts} onClick={handleUnlockCourse} />
-      )}
+      <div className="mt-4">
+        {nfts.length == 0 ? (
+          <Flex className="mt-4">
+            <LoadingSection color="green" loading={true} />
+          </Flex>
+        ) : (
+          <NFTCard2 NFTData={nfts} onClick={handleUnlockCourse} />
+        )}
+      </div>
 
       {showModal.show && currentAccount && !unLock ? (
         <ModalCustom
@@ -79,7 +77,9 @@ const CourseScreen = ({}: CourseScreenProps) => {
             text: "Mở khoá",
             onClick: async () => {
               setLoading(true);
-              const result = await transferTokenUnlock();
+              const result = await transferTokenUnlock({
+                price: Number(showModal.data.price) * 10000,
+              });
 
               if (result) {
                 setUnlock(true);
@@ -107,7 +107,8 @@ const CourseScreen = ({}: CourseScreenProps) => {
               setUnlock(false);
             },
           }}>
-          Bạn cần dùng 1000 PEPEATSCHOOL để mở khoá Khoá học?
+          Bạn cần dùng {showModal.data.price * 10000} PEPEATSCHOOL để mở khoá
+          Khoá học?
         </ModalCustom>
       ) : null}
 
@@ -120,7 +121,7 @@ const CourseScreen = ({}: CourseScreenProps) => {
               show: false,
             });
           }}
-          title="Thông báo mở khoá">
+          title="Thông báo mở khoá thành công">
           Mã khoá học của bạn: {showModal?.data?.description}
         </ModalCustom>
       ) : null}

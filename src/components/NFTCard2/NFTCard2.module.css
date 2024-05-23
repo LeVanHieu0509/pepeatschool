@@ -1,77 +1,86 @@
-.Main{
-  
+.Main {
 }
-.NFT_section{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  border-radius: 0.25rem;
 
+.NFT_section {
+  --tw-bg-opacity: 1;
+  border-radius: 0.25rem;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .NFTCard {
   width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
   gap: 3rem;
-  margin-bottom: 10rem;
+  display: grid;
   cursor: pointer;
+
+  margin-bottom: 10rem;
+  grid-template-columns: repeat(4, 1fr);
 }
-.NFTCard_img{
-  height: 230px;
+
+.NFTCard_img {
   width: 100%;
+  height: 230px;
+
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
-.NFTCard_box {
-  background-color:#fff;
-  border-radius: 18px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease-in;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  height: 340px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; 
-  font-family: "Montserrat",sans-serif;
-}
-.NFTCard_box:hover .last_sale{
-  display: none;
 
+.NFTCard_box {
+  height: 340px;
+
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 18px;
+
+  background-color: #fff;
+  font-family: "Montserrat", sans-serif;
+
+  transition: all 0.3s ease-in;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
-.NFTCard_box:hover .NFT_purchase_section{
+
+.NFTCard_box:hover .last_sale {
+  display: none;
+}
+
+.NFTCard_box:hover .NFT_purchase_section {
   transform: translateY(-45px);
 }
-.NFTCard_img:hover{
+
+.NFTCard_img:hover {
   transform: scale(1.2);
 }
-.NFT_course_info{
+
+.NFT_course_info {
   padding: 10px;
   font-size: 14px;
-  
 }
-.NFT_course_name{
+.NFT_course_name {
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
   margin-bottom: 5px;
   margin-top: 5px;
 }
-.NFT_course_price{
+.NFT_course_price {
   font-weight: 500;
 }
-.last_sale{
+.last_sale {
   padding-bottom: 10px;
   padding-left: 10px;
   font-size: 14px;
   margin-top: -5px;
   color: #008000;
 }
-.last_sale_price{
-
+.last_sale_price {
 }
 
-.NFT_purchase_section{
+.NFT_purchase_section {
   background-color: #008000;
   height: 45px;
   display: flex;
@@ -80,25 +89,22 @@
   position: relative;
   bottom: -45px;
   transition: transform 0.3s ease-out;
-  
 }
-.NFT_unlock_btn{
+.NFT_unlock_btn {
   width: 83%;
   text-align: center;
   margin-left: 10px;
   line-height: 40px;
   font-weight: 600;
   border-right: #fff 1px solid;
-
 }
-.NFT_unlock_btn_img{
+.NFT_unlock_btn_img {
   display: flex;
   width: 17%;
   justify-content: center;
   align-items: center;
-
 }
-.NFT_unlock_img{
+.NFT_unlock_img {
   height: 25px;
   margin-top: -5px;
 }
@@ -155,7 +161,6 @@
   grid-column: 1 / -1;
   grid-row: 1 / end;
   overflow: hidden;
-  
 }
 
 .NFTCard_box_img_img {
@@ -222,7 +227,7 @@
   font-size: 1.5rem;
 }
 
-@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+@media screen and (min-width: 320px) and (max-width: 425px) {
   .NFTCard {
     width: 90%;
     margin: 0 auto;
@@ -239,13 +244,14 @@
   }
 }
 
-@media screen and (min-device-width: 427px) and (max-device-width: 768px) {
+@media screen and (min-width: 427px) and (max-width: 768px) {
   .NFTCard {
+    width: 95%;
+    margin: 0 auto;
+
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
- 
-  
 
   .NFTCard_box_update_right {
     padding: 0.5rem 2rem;
@@ -254,31 +260,35 @@
   .NFTCard_box_update_right_info p {
     font-size: 1rem;
   }
-  .NFTCard_img{
+
+  .NFTCard_img {
     height: 185px;
   }
-  .NFT_unlock_btn_img{
+
+  .NFT_unlock_btn_img {
     width: 0%;
   }
-  .NFT_unlock_btn{
-    border:none;
+
+  .NFT_unlock_btn {
+    border: none;
     width: 100%;
   }
-  .last_sale{
+
+  .last_sale {
     font-size: 15px;
   }
-  .NFT_purchase_section{
+
+  .NFT_purchase_section {
     bottom: -80px;
   }
- 
-  
 }
 
-@media screen and (min-device-width: 770px) and (max-device-width: 1024px) {
+@media screen and (min-width: 770px) and (max-width: 1024px) {
   .NFTCard {
     grid-template-columns: repeat(2, 1fr);
     width: 70%;
   }
+
   .NFT_course_name {
     font-size: 14px;
   }

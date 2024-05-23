@@ -21,7 +21,7 @@ const NFTCard = ({ NFTData, onClick }) => {
 
   return (
     <div>
-      <div className={Style.NFTCard}>
+      {/* <div className={Style.NFTCard}>
         {NFTData.map((el, i) => (
           <div
             className="bg-white flex flex-col justify-between border rounded shadow-md hover:shadow-teal-400"
@@ -90,7 +90,7 @@ const NFTCard = ({ NFTData, onClick }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

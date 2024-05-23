@@ -22,6 +22,8 @@ const FormUploadCourseScreen = ({
 
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
+  const [price, setPrice] = useState("");
+
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -45,6 +47,11 @@ const FormUploadCourseScreen = ({
           onChange={(e: any) => setCode(e.target.value)}
           value={code}
         />
+        <InputCustom
+          label="Niêm yết với giá (PAS)"
+          onChange={(e: any) => setPrice(e.target.value)}
+          value={price}
+        />
       </FlexColumn>
       {error ? <p>{error}</p> : null}
       <Flex justify="center" gap={16} className="w-100 mt-8">
@@ -57,7 +64,7 @@ const FormUploadCourseScreen = ({
           disabled={false}
           onClick={async () => {
             setLoading(true);
-            createNFT(name, "0.15", image, code);
+            createNFT(name, String(Number(price) / 10000), image, code);
           }}
           placeholder={undefined}
           onPointerEnterCapture={undefined}

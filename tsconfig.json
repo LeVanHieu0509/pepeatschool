@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     "middleware.js",
-    "src/plugins/chat-gpt/bot/axios-instant.js"
+    "src/plugins/chat-gpt/bot/axios-instant.js",
+    "src/components/NFTCard2/NFTCard2.jsx"
   ],
   "exclude": ["node_modules"]
 }
