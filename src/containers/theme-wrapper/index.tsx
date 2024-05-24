@@ -39,9 +39,14 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     title: "Thông báo",
   });
 
-  const linkNotConnectWallet = !["/_error", "/index.en-US", "/"].includes(
-    router.pathname
-  );
+  const linkNotConnectWallet = ![
+    "/_error",
+    "/index.en-US",
+    "/",
+    "/course.en-US",
+    "/trade.en-US",
+    "/manager.en-US",
+  ].includes(router.pathname);
 
   useEffect(() => {
     const listenter = function (ev: MouseEvent) {
@@ -80,7 +85,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
 
       {linkNotConnectWallet && !account ? (
         <ModalCustom
-          show={false}
+          show={true}
           onCloseModal={() => {
             setShowModal({
               show: false,
@@ -105,7 +110,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
         </ModalCustom>
       ) : null}
 
-      {linkNotConnectWallet && account && unLock ? (
+      {linkNotConnectWallet && account && !unLock ? (
         <ModalCustom
           show={true}
           onCloseModal={() => {

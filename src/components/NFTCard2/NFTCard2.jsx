@@ -40,7 +40,7 @@ const NFTCard = ({ NFTData, onClick }) => {
   return (
     <div className={Style.Main}>
       <div className={Style.NFTCard}>
-        {NFTData.map((el, i) => (
+        {NFTData.filter((a) => a.tokenId > 21).map((el, i) => (
           <div className={Style.NFT_section}>
             <div className={Style.NFTCard_box}>
               <div className={Style.NFTCard_box_img}>

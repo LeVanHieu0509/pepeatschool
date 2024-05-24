@@ -1,15 +1,10 @@
 "use client";
 
-import React, { useContext, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import SidebarLinkGroup from "./SidebarLinkGroup";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import AppContext from "src/contexts/app";
-import IconOverview from "./icon-overview";
 import IconChatGpt from "./icon-chat-gpt";
-import IconChat from "./icon-chat";
-import IconSetting from "./icon-setting";
+import IconOverview from "./icon-overview";
 import IconUpload from "./icon-upload";
 
 interface SidebarProps {
@@ -19,7 +14,7 @@ interface SidebarProps {
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const pathname = usePathname();
-  const { setTapAdmin, tapAdmin } = useContext(AppContext);
+  const { setTapAdmin, tapAdmin, account } = useContext(AppContext);
   const trigger = useRef<any>(null);
   const sidebar = useRef<any>(null);
 
@@ -74,18 +69,25 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       icon: <IconChatGpt />,
       type: "PEPEGPT",
     },
-    {
-      title: "Room Chat",
-      icon: <IconChat />,
-      type: "CHAT",
-    },
+    // {
+    //   title: "Room Chat",
+    //   icon: <IconChat />,
+    //   type: "CHAT",
+    // },
     {
       title: "Upload Course",
       icon: <IconUpload />,
       type: "UPLOAD-COURSE",
     },
   ];
-  console.log({ tapAdmin });
+
+  const isAdmin = account == "0x8229C4e44c9c43c4656a5d8D7057a2DB416b216B";
+
+  const list = useMemo(
+    () =>
+      !isAdmin ? listMenu.filter((i) => i.type !== "UPLOAD-COURSE") : listMenu,
+    [isAdmin]
+  );
 
   return (
     <aside
@@ -103,7 +105,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-              {listMenu.map((item) => (
+              {list.map((item) => (
                 <li>
                   <div
                     onClick={() => setTapAdmin(item.type)}
