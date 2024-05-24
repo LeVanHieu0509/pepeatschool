@@ -40,7 +40,7 @@ const TradeScreen = ({}: CourseScreenProps) => {
           </div>
           <div className="pepetitle-line">Risk Management System</div>
         </div>
-        <div className="prediction_section ">
+        <div className="prediction_section">
           <div className="eighty-percent-section">
             <div className="prediction_headline">
               Dự báo thị trường tuần này
@@ -59,9 +59,9 @@ const TradeScreen = ({}: CourseScreenProps) => {
               <span className="inter"> 85%</span>
             </div>
           </div>
-          <div className="twenty-precent-section">
+          <div className="twenty-precent-section mb-text">
             <div className="prediction_risk_part ">
-              <div className="prediction_risk_headline bold sm-text margin-bot">
+              <div className="prediction_risk_headline bold sm-text margin-bot mb-text">
                 Tỉ lệ rủi ro
               </div>
               <div className="prediction_risk_data red800 bold margin-bot">
@@ -69,14 +69,14 @@ const TradeScreen = ({}: CourseScreenProps) => {
               </div>
             </div>
             <div className="prediction_risk_change">
-              <div className="prediction_risk_change_headline bold sm-text margin-bot">
+              <div className="prediction_risk_change_headline bold sm-text margin-bot mb-text">
                 Tỉ lệ rủi ro thay đổi
               </div>
               <div className="prdiction_risk_change_data red800 bold margin-bot">
                 1.75%
               </div>
             </div>
-            <Button className="btn_more_info bold">Xem thêm</Button>
+            <Button className="btn_more_info bold ">Xem thêm</Button>
             <div className="PEPEATSCHOOL-info ssm-text">
               Tìm hiểu thêm về RMS
             </div>
