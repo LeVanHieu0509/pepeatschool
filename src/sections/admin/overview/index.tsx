@@ -1,12 +1,18 @@
 import { Button } from "nextra/components";
 import { OverviewScreenWrapper } from "./styled";
+import dynamic from "next/dynamic";
 
 interface OverviewScreenProps {}
+
+const DynamicChartOneWithNoSSR = dynamic(
+  () => import("src/components/Charts/ChartOne"),
+  { ssr: false }
+);
 
 const OverviewScreen = ({}: OverviewScreenProps) => {
   return (
     <OverviewScreenWrapper>
-      <div className="Main">
+      <div className="Main" style={{ marginBottom: "24px" }}>
         <div className="Main-title">
           <div className="pepetitle-and-logo">
             <div className="pepetitle">PAS</div>
@@ -59,6 +65,12 @@ const OverviewScreen = ({}: OverviewScreenProps) => {
           </div>
         </div>
       </div>
+
+      <div className="prediction_headline " style={{ marginBottom: "24px" }}>
+        PEPE Chart Dự đoán Tương lai
+      </div>
+
+      <DynamicChartOneWithNoSSR />
     </OverviewScreenWrapper>
   );
 };

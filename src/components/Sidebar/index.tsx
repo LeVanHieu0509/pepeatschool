@@ -81,12 +81,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     },
   ];
 
-  const isAdmin = account == "0x8229C4e44c9c43c4656a5d8D7057a2DB416b216B";
+  const isAdmin = account == "0x8229c4e44c9c43c4656a5d8d7057a2db416b216b";
 
   const list = useMemo(
     () =>
       !isAdmin ? listMenu.filter((i) => i.type !== "UPLOAD-COURSE") : listMenu,
-    [isAdmin]
+    [isAdmin, account]
   );
 
   return (
