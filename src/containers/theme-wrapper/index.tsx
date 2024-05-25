@@ -30,6 +30,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     reLoading,
     setAccount,
     setNetworkConnect,
+    setLoading,
   } = useContext(AppContext);
 
   const [showModal, setShowModal] = useState<ShowModal>({
@@ -46,6 +47,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
     "/course.en-US",
     "/trade.en-US",
     "/manager.en-US",
+    "/blog.en-US",
   ].includes(router.pathname);
 
   useEffect(() => {
@@ -121,12 +123,15 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
           }}
           title="Thông báo"
           primaryBtn={{
+            loading: loading,
             text: "Mở khoá",
             onClick: async () => {
+              setLoading(true);
               const result = await transferTokenUnlock({ price: 1000 });
 
               if (result) {
                 setUnlock(result);
+                setLoading(false);
               } else {
                 Alert(
                   "WARNING",
