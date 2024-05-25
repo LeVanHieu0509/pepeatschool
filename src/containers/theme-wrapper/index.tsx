@@ -123,7 +123,7 @@ const ThemeWrapper = ({ children, component }: ThemeWrapperProps) => {
           primaryBtn={{
             text: "Mở khoá",
             onClick: async () => {
-              const result = await transferTokenUnlock();
+              const result = await transferTokenUnlock({ price: 1000 });
 
               if (result) {
                 setUnlock(result);

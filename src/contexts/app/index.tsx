@@ -89,7 +89,6 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const transferTokenUnlock = async ({ price = 1000 }) => {
-    console.log({ price });
     try {
       const userAccount = await checkIfWalletConnected();
       const web3modal = new Web3Modal();
