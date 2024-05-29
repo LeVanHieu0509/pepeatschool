@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "styles/media";
 
 export const CourseScreenWrapper = styled.div`
   .Main {
@@ -205,6 +206,29 @@ export const CourseScreenWrapper = styled.div`
     height: 25px;
     margin-left: 10px;
     padding-bottom: -40px;
+  }
+  @media ${device.mobile}{
+    .prediction_section{
+      flex-direction: column;
+    }
+    .eighty-percent-section{
+      width: 100%;
+      background-position: center;
+    }
+    .down_prediction{
+      font-size: 4rem;
+    }
+    .down_prediction-img{
+      width: 150px;
+      height: 150px;
+    }
+    .description_inter{
+      font-size: 14px;
+    }
+    .twenty-precent-section{
+      width: 100%;
+    }
+   
   }
 `;
 
