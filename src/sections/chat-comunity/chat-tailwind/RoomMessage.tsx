@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import { Message } from "../utils/message";
 import Avatar from "../components/Avatar";
 import { ItemWrapper } from "./styled";
 
-export default function RoomMessage(props: {
-  message: Message;
-  isMe: boolean;
-}) {
+export default function RoomMessage(props: { message: any; isMe: boolean }) {
   const { message, isMe } = props;
   const [formattedDate, setFormattedDate] = useState<string | null>();
 
