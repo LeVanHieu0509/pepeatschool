@@ -42,18 +42,6 @@
       "pagination": false
     }
   },
-  "hehehe": {
-    "type": "page",
-    "title": "Chat",
-    "theme": {
-      "typesetting": "article",
-      "sidebar": true,
-      "toc": true,
-      "layout": "full"
-      
-    }
-  },
-
   "manager": {
     "display": "hidden",
     "type": "page",

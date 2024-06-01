@@ -5,13 +5,14 @@ import AppContext from "src/contexts/app";
 
 interface ChatTailwindProps {}
 
-const data: any = [
+const dataRoom: any = [
   {
     id: "1",
     connections: 1,
-    roomName: "Cộng đồng pepe",
+    roomName: "Cộng đồng Pepe",
     users: [
       {
+        id: "1",
         username: "Lê văn Hiếu",
         joinedAt: "",
         leftAt: "aaaa",
@@ -19,6 +20,7 @@ const data: any = [
         image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
       },
       {
+        id: "2",
         username: "Lê văn Hiếu",
         joinedAt: "",
         leftAt: "aaaa",
@@ -33,6 +35,7 @@ const data: any = [
     roomName: "Trao đổi kiến thức",
     users: [
       {
+        id: "1",
         username: "Lê văn Hiếu",
         joinedAt: "",
         leftAt: "aaaa",
@@ -54,18 +57,18 @@ const messages: any = [
     },
 
     text: "Hey How are you today? Hey How are you today? Hey How are you today?",
-    at: Date.now(),
+    at: 1717221500404,
   },
   {
     idRoom: "1",
     from: {
       id: "2",
-      username: "Lê văn Hiếu",
+      username: "Nguyễn Tấn Hiệp",
       image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
     },
 
     text: "Quá đẹp luôn",
-    at: Date.now(),
+    at: 1717222300404,
   },
   {
     idRoom: "1",
@@ -76,7 +79,7 @@ const messages: any = [
     },
 
     text: "Hiếu đẹp trai",
-    at: Date.now(),
+    at: 1717223300404,
   },
 
   {
@@ -89,29 +92,31 @@ const messages: any = [
     },
 
     text: "Hiếu đẹp trai",
-    at: Date.now(),
+    at: 1717224300404,
   },
+  // DATA CỦA ROOM 2
   {
     idRoom: "2",
     from: {
       id: "1",
       username: "Lê văn Hiếu",
-      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
+      image:
+        "https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png",
     },
 
     text: "Hiếu đẹp trai",
-    at: Date.now(),
+    at: 1717221300404,
   },
   {
     idRoom: "2",
     from: {
       id: "2",
-      username: "Lê văn Hiếu",
+      username: "Nguyễn Tấn Hiệp",
       image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
     },
 
-    text: "Hiếu đẹp trai",
-    at: Date.now(),
+    text: "Xin chào mọi người",
+    at: 1717222300404,
   },
 ];
 
@@ -119,14 +124,10 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
   const { account } = useContext(AppContext);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const [activeRoomChat, setActiveRoomChat] = useState<any>();
+  const [activeRoomChat, setActiveRoomChat] = useState<any>(dataRoom[0]);
   const [messageData, setMessageData] = useState<any>(() => messages);
 
   const [text, setText] = useState("");
-
-  useEffect(() => {
-    setActiveRoomChat(data[0]);
-  }, []);
 
   const user = {
     id: "1",
@@ -138,7 +139,7 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
   };
 
   const handleSubmit = () => {
-    console.log("handle");
+    console.log("handleSubmit");
     if (text.length > 0) {
       const inputData = {
         idRoom: activeRoomChat?.id,
@@ -176,12 +177,21 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
     [messageData, activeRoomChat]
   );
 
-  const handleKeyEnter = (e) => {
-    console.log("handleKeyEnter");
-    if (e.key === "Enter") {
+  const handleUserKeyPress = (event) => {
+    if (event.key === "Enter") {
       handleSubmit();
+    } else {
+      return;
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleUserKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleUserKeyPress);
+    };
+  });
 
   return (
     <ChatTailwindWrapper>
@@ -227,11 +237,11 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
               <div className="flex flex-row items-center justify-left text-xs">
                 <span className="font-bold">Nhóm</span>
                 <span className="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">
-                  {data.length}
+                  {dataRoom.length}
                 </span>
               </div>
               <div className="flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-auto">
-                {data.map((item, key) => (
+                {dataRoom.map((item, key) => (
                   <button
                     key={key}
                     onClick={() => handleGroupChat(item)}
@@ -289,7 +299,6 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                     <input
                       placeholder="Nhập ở đây..."
                       value={text}
-                      onKeyDown={handleKeyEnter}
                       onChange={(e) => setText(e.target.value)}
                       type="text"
                       className="flex w-full border rounded-xl focus:outline-none focus:border-indigo-300 pl-4 h-10 bg-white p-2"
