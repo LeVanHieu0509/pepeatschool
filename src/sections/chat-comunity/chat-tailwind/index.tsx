@@ -214,10 +214,13 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                   className="h-full w-full"
                 />
               </div>
-              <div className="text-sm font-semibold mt-2">Hiếu.</div>
+              <div className="text-sm font-semibold mt-2"></div>
               <div className="text-xs text-gray-500">
-                Address: {account?.slice(0, 10)}...
-                {account?.slice(36, account.length)}
+                Address:{" "}
+                <b>
+                  {account?.slice(0, 10)}...
+                  {account?.slice(36, account.length)}
+                </b>
               </div>
             </div>
             <div className="flex flex-col mt-8">
@@ -311,7 +314,7 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                 <div className="ml-4">
                   <button
                     onClick={handleSubmit}
-                    className="flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
+                    className="flex items-center justify-center bg-green-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
                     <span>Send</span>
                     <span className="ml-3">
                       <svg

@@ -1,5 +1,6 @@
 import useClickAway from "hooks/use-click-away";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useContext, useRef } from "react";
 import AppContext from "src/contexts/app";
 import { disconnectWallet } from "src/contracts";
@@ -7,6 +8,7 @@ import { disconnectWallet } from "src/contracts";
 interface ProfileProps {}
 
 const Profile = ({}: ProfileProps) => {
+  const router = useRouter();
   const {
     account,
     ether,
@@ -29,9 +31,10 @@ const Profile = ({}: ProfileProps) => {
 
   const handleLogoutWallet = async () => {
     const result = await disconnectWallet();
-
+    console.log("result", result);
     if (!result) {
       setOpen(false);
+      router.push("/");
     }
   };
 
