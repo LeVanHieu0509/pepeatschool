@@ -56,67 +56,100 @@ const messages: any = [
         "https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png",
     },
 
-    text: "Hey How are you today? Hey How are you today? Hey How are you today?",
+    text: "Hi",
     at: 1717221500404,
   },
   {
     idRoom: "1",
     from: {
       id: "2",
-      username: "Nguyễn Tấn Hiệp",
+      username: "Nguyễn Văn Anh",
       image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
     },
 
-    text: "Quá đẹp luôn",
+    text: "Hello",
     at: 1717222300404,
   },
   {
     idRoom: "1",
     from: {
       id: "2",
-      username: "Lê văn Hiếu",
-      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
+      username: "Lê Anh Đức",
+      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
     },
 
-    text: "Hiếu đẹp trai",
+    text: "Welcome",
     at: 1717223300404,
   },
 
   {
     idRoom: "1",
     from: {
+      id: "3",
+      username: "Nguyễn Đình Anh",
+      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png",
+    },
+
+    text: "Cho tôi làm quen với nhé",
+    at: 1717224500404,
+  },
+  {
+    idRoom: "1",
+    from: {
       id: "1",
-      username: "Lê văn Hiếu",
+      username: "",
       image:
         "https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png",
     },
 
-    text: "Hiếu đẹp trai",
-    at: 1717224300404,
+    text: "Chào các bạn",
+    at: 1717224600404,
   },
   // DATA CỦA ROOM 2
   {
     idRoom: "2",
     from: {
       id: "1",
-      username: "Lê văn Hiếu",
+      username: "Đặng Quốc Tuấn",
       image:
         "https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png",
     },
 
-    text: "Hiếu đẹp trai",
+    text: "Hello",
     at: 1717221300404,
   },
   {
     idRoom: "2",
     from: {
       id: "2",
-      username: "Nguyễn Tấn Hiệp",
-      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/29587.png",
+      username: "Cao Thế Nhân",
+      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/1975.png",
     },
 
     text: "Xin chào mọi người",
     at: 1717222300404,
+  },
+  {
+    idRoom: "2",
+    from: {
+      id: "2",
+      username: "Doãn Chí Bình",
+      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+    },
+
+    text: "Xin chào",
+    at: 1717222400404,
+  },
+  {
+    idRoom: "2",
+    from: {
+      id: "2",
+      username: "Dương Quá",
+      image: "https://s2.coinmarketcap.com/static/img/coins/64x64/52.png",
+    },
+
+    text: "Xin chào cộng đồng Pepe",
+    at: 1717222400404,
   },
 ];
 
@@ -177,21 +210,21 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
     [messageData, activeRoomChat]
   );
 
-  const handleUserKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSubmit();
-    } else {
-      return;
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("keydown", handleUserKeyPress);
+    window.addEventListener("keydown", handleKeypress);
 
     return () => {
-      window.removeEventListener("keydown", handleUserKeyPress);
+      window.removeEventListener("keydown", handleKeypress);
     };
   });
+
+  const handleKeypress = (e: any) => {
+    // It's triggers by pressing the enter key
+    if (e.keyCode == 13 && !e.shiftKey) {
+      handleSubmit();
+      e.preventDefault();
+    }
+  };
 
   return (
     <ChatTailwindWrapper>
