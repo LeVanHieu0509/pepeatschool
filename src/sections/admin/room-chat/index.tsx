@@ -1,10 +1,14 @@
-import DefaultLayout from "src/components/Layouts/DefaultLayout";
+import ChatScreen from "src/screens/chat";
 import { RoomChatScreenWrapper } from "./styled";
 
 interface RoomChatScreenProps {}
 
 const RoomChatScreen = ({}: RoomChatScreenProps) => {
-  return <RoomChatScreenWrapper>RoomChatScreen</RoomChatScreenWrapper>;
+  return (
+    <RoomChatScreenWrapper>
+      <ChatScreen />
+    </RoomChatScreenWrapper>
+  );
 };
 
 export default RoomChatScreen;

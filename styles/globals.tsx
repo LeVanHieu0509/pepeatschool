@@ -3,7 +3,7 @@ import { liemDevCss } from "./liem-dev";
 import { customCss } from "./custom";
 
 function renderSpace(type: "margin" | "padding", prefix = "") {
-  return [0, 2, 6, 8, 10, 12, 16, 20, 24, 30, 36, 40, 60]
+  return [12, 16, 20, 24, 30, 36, 40, 60, 70, 80]
     .map((size) =>
       ["", "-top", "-left", "-bottom", "-right"]
         .map((dir) => {
@@ -18,6 +18,22 @@ function renderSpace(type: "margin" | "padding", prefix = "") {
 }
 
 const style = css`
+  ${renderSpace("margin")}
+  ${renderSpace("padding")}
+
+  ::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
   .Toastify__toast-container--bottom-center {
     width: 80vw;
   }

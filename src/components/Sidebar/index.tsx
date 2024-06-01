@@ -6,6 +6,7 @@ import AppContext from "src/contexts/app";
 import IconChatGpt from "./icon-chat-gpt";
 import IconOverview from "./icon-overview";
 import IconUpload from "./icon-upload";
+import IconChat from "./icon-chat";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -60,20 +61,20 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   }, [sidebarExpanded]);
   const listMenu = [
     {
-      title: "Tổng quan",
+      title: "Pepe Overview",
       icon: <IconOverview />,
       type: "OVERVIEW",
     },
     {
-      title: "PepeGpt",
+      title: "Pepe Gpt",
       icon: <IconChatGpt />,
       type: "PEPEGPT",
     },
-    // {
-    //   title: "Room Chat",
-    //   icon: <IconChat />,
-    //   type: "CHAT",
-    // },
+    {
+      title: "Pepe Community",
+      icon: <IconChat />,
+      type: "CHAT",
+    },
     {
       title: "Upload Course",
       icon: <IconUpload />,

@@ -7,8 +7,6 @@ import { getPagesUnderRoute } from 'nextra/context';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import filterRouteLocale from "nextra/filter-route-locale";
-import { ChatScreenWrapper } from "./style.ts"
-
 
 export function BlogHeader() {
   return (
@@ -20,22 +18,21 @@ export function BlogHeader() {
         Bài viết, tin tức mới nhất dành cho cộng đồng
       </p>
       
+     
     </div>
-   
- 
-  );
+
+);
 }
 export function Chat() {
-  return (
-    <ChatScreenWrapper>
-      <div className="bruh">
-      Xin chào tất cả mọi người
-       <div className="heh">
-       </div>
-      </div>
-    </ChatScreenWrapper>
-  );
-}
+return (
+
+<div>
+  <div className="bruh">
+    Xin chào tất cả mọi người
+    <div className="heh"></div>
+  </div>
+</div>
+); }
 
 export function BlogIndex() {
   // debug the function here
@@ -43,10 +40,7 @@ export function BlogIndex() {
   const blogArticles = filterRouteLocale(
     getPagesUnderRoute("/blog"),
     locale,
-    defaultLocale,
-    <Chat />
-  
-  
+    defaultLocale
   );
 
 const sortedPages = blogArticles.sort((a, b) => {
@@ -94,6 +88,7 @@ return (
             </ul>
           </div>
         </li>
+
 ); });
 
 return (<ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-2 pt-4 xl:p-5">
@@ -104,4 +99,3 @@ return (<ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-2 pt-4 xl:p-5">
 <BlogHeader />
 
 <BlogIndex />
-
