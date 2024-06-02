@@ -1329,7 +1329,7 @@ const config: DocsThemeConfig = {
               <a
                 style={{ marginLeft: "-10px" }}
                 className="flex "
-                href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
+                href="https://t.me/pepeatschool">
                 <img
                   src="https://mspoweruser.com/wp-content/uploads/2022/03/Telegram-Logo.png"
                   alt="telegram"
@@ -1343,7 +1343,7 @@ const config: DocsThemeConfig = {
               <a
                 style={{ marginLeft: "-10px" }}
                 className="flex "
-                href="https://vn.search.yahoo.com/search?fr=mcafee&type=E210VN714G91826&p=telegram">
+                href="">
                 <img
                   src="https://1000logos.net/wp-content/uploads/2017/06/Twitter-Log%D0%BE.png"
                   alt="X"

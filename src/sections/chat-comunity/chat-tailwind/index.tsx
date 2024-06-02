@@ -1,10 +1,17 @@
-import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, {useContext, useEffect, useMemo, useRef, useState } from "react";
 import { ChatTailwindWrapper, ContentWrapper, ItemBlock } from "./styled";
 import RoomMessage from "./RoomMessage";
 import AppContext from "src/contexts/app";
+import { tree } from "next/dist/build/templates/app-page";
+
 
 interface ChatTailwindProps {}
-
+function YourComponent() {
+  const [showImage, setShowImage] = useState(false); // State để theo dõi trạng thái hiển thị của hình ảnh
+  const handleGroupChat=(item)=>{
+    setShowImage(true)
+  }
+}
 const dataRoom: any = [
   {
     id: "1",
@@ -228,10 +235,8 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
 
   return (
     <ChatTailwindWrapper>
-      <div className="flex h-screen antialiased text-gray-800">
-        <ContentWrapper className="flex flex-row h-full w-full">
-          <div className="flex flex-col pl-6 pr-2 w-64 bg-white flex-shrink-0">
-            <div className="flex flex-row items-center justify-center h-12">
+      <div className=" h-screen antialiased text-gray-800">
+      <div className="flex flex-row items-center justify-center h-12">
               <div className="flex items-center justify-center rounded-2xl text-indigo-700 bg-indigo-100 h-10 w-10">
                 <svg
                   className="w-6 h-6"
@@ -249,7 +254,9 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
               </div>
               <div className="ml-2 font-bold text-2xl">Pepe Chat</div>
             </div>
-            <div className="flex flex-col items-center bg-indigo-100 border border-gray-200 mt-4 w-full py-6 px-4 rounded-lg">
+        <ContentWrapper className="flex flex-row h-full w-full">
+          <div className="flex flex-col pl-6 pr-2 w-64 bg-white flex-shrink-0">
+            <div className="chat-info flex flex-col green-bg items-center bg-indigo-100 border border-gray-200 mt-4 w-full py-6 px-4 rounded-lg">
               <div className="h-20 w-20 rounded-full border overflow-hidden">
                 <img
                   src="https://cointelegraph.com/magazine/wp-content/uploads/2021/03/unnamed1.png"
@@ -257,8 +264,8 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                   className="h-full w-full"
                 />
               </div>
-              <div className="text-sm font-semibold mt-2"></div>
-              <div className="text-xs text-gray-500">
+              <div className="text-sm text-white font-semibold mt-2"></div>
+              <div className="text-xs text-white text-16">
                 Address:{" "}
                 <b>
                   {account?.slice(0, 10)}...
@@ -266,10 +273,10 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                 </b>
               </div>
             </div>
-            <div className="flex flex-col mt-8">
-              <div className="flex flex-row items-center justify-left text-xs">
-                <span className="font-bold">Nhóm</span>
-                <span className="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">
+            <div className="group-chat flex flex-col mt-8">
+              <div className="flex flex-row font-hover items-center justify-left text-xs center">
+                <span className="font-bold font-hover text-16">Nhóm đã tham gia:</span>
+                <span className="flex items-center font-hover  text-16  font-bold justify-center bg-gray-300 h-4 w-4 rounded-full">
                   {dataRoom.length}
                 </span>
               </div>
@@ -278,31 +285,40 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                   <button
                     key={key}
                     onClick={() => handleGroupChat(item)}
-                    className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2 ">
+                    className="trans flex flex-row items-center hover:bg-gray-100 rounded p-2 "
+                    style={{
+                    background: activeRoomChat?.id == item.id ? "green" : "#111"
+                    }}>
+                    
                     <div
                       className="ml-2 text-sm font-semibold "
                       style={{
-                        color: activeRoomChat?.id == item.id ? "green" : "#111",
+                        color: activeRoomChat?.id == item.id ? "white" : "white",
                       }}>
                       {item.roomName}
                     </div>
+                    
                   </button>
+                  
                 ))}
               </div>
             </div>
           </div>
           <ItemBlock
-            className="flex flex-col flex-auto h-full"
+            className=" flex flex-col flex-auto h-full"
             style={{ height: "90%" }}>
             <div
-              className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100"
+              className="chat-section flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100"
               style={{
-                border: "1px solid grey",
-                height: "500px",
+                
+                height: "600px",
                 overflow: "auto",
               }}>
+                <div className="top green-bg">
+                  <div className=""></div>
+                </div>
               <div
-                className="  flex flex-col h-full overflow-x-auto mb-4"
+                className="chat-section flex flex-col h-full overflow-x-auto mb-4"
                 ref={scrollRef}>
                 <div className="flex flex-col ">
                   <div className="grid grid-rows-12 gap-y-2">
@@ -326,7 +342,7 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
+              <div className="box-chat green-bg flex flex-row items-center  h-16 bg-white w-full px-4">
                 <div className="flex-grow">
                   <div className="relative w-full">
                     <input
@@ -357,7 +373,7 @@ const ChatTailwind = ({}: ChatTailwindProps) => {
                   <button
                     onClick={handleSubmit}
                     className="flex items-center justify-center bg-green-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0">
-                    <span>Send</span>
+                    <span className="send font-bold">Send</span>
                     <span className="ml-3">
                       <svg
                         className="w-4 h-4 transform rotate-45 -mt-px"
