@@ -67,7 +67,7 @@ const OverviewScreen = ({}: OverviewScreenProps) => {
       </div>
 
       <div className="prediction_headline " style={{ marginBottom: "24px" }}>
-        PEPE Chart Dự đoán Tương lai
+        PEPE Chart
       </div>
 
       <DynamicChartOneWithNoSSR />

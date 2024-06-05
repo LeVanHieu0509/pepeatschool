@@ -9,6 +9,7 @@ import Image from "next/image";
 
 
 
+
 const Chart = dynamic(() => import("../chart").then((mod) => mod.Chart));
 const Showdown = dynamic(() =>
   import("../extra-content").then((mod) => mod.Showdown)

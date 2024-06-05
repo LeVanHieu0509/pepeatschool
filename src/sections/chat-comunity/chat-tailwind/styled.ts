@@ -35,7 +35,7 @@ export const ContentWrapper = styled.div`
     border-radius: 10px;
     padding:10px 10px;
     height: 60%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 6px;
   }
 
   .font-hover:hover{
@@ -46,7 +46,12 @@ export const ContentWrapper = styled.div`
  
   @media ${device.mobile} {
     flex-direction: column;
+    .group-chat{
+      margin-bottom: 15px;
+      background-color: #FFFFFF	;
+    }
   }
+  
   
 `;
 
